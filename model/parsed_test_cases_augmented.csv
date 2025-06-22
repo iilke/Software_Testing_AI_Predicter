@@ -1,0 +1,17 @@
+test_id,num_steps,step_keywords,duration,result,step_tokens
+TestCase002_IBITBaslatma,4,Set ARM Switch is Send Start IBIT Message Set ARM Switch is OFF Send Start IBIT Message,18.956,PASS,"['Set', 'ARM', 'Switch', 'is', 'Send', 'Start', 'IBIT', 'Message', 'Set', 'ARM', 'Switch', 'is', 'OFF', 'Send', 'Start', 'IBIT', 'Message']"
+TestCase002_IBITBaslatma_aug,4,IBIT Switch is ARM,19.7919758590459,PASS,
+TestCase003_SYYDurumBilgileri,6,Set ARM Switch is ON Send SYY State Message Set ARM Switch is OFF Send SYY State Message Send Start IBIT Message Send SYY State Message,31.783,PASS,"['Set', 'ARM', 'Switch', 'is', 'ON', 'Send', 'SYY', 'State', 'Message', 'Set', 'ARM', 'Switch', 'is', 'OFF', 'Send', 'SYY', 'State', 'Message', 'Send', 'Start', 'IBIT', 'Message', 'Send', 'SYY', 'State', 'Message']"
+TestCase003_SYYDurumBilgileri_aug,6,Set ARM State ARM Send SYY,32.16396073729827,PASS,
+TestCase010_LB_OperatingMode_FaultyStatus_aug,7,Üst OFF Set 2 LB Konfigürasyon MessageOperations::trasmit_message:,17.925271837187104,FAIL,
+TestCase002_IBITBaslatma_aug,4,Send Message Switch Send,20.148823971681512,PASS,
+TestCase003_SYYDurumBilgileri_aug,6,Switch Start ON Message SYY Send,33.11193151159853,PASS,
+TestCase010_LB_OperatingMode_FaultyStatus,7,"Turn LB Power ON or RESET Set ARM Switch is OFF Send LB Konfigürasyon Mesajı2025-06-16 14:43:26,003:DEBUG : UTS : MessageOperations::trasmit_message: Set ARM Switch is ON Send TEC Sıcaklık Limit Değeri Üst Limit 2 Derece Send Start IBIT Message Send TEC Sıcaklık Limit Değeri",18.27,FAIL,"['Turn', 'LB', 'Power', 'ON', 'or', 'RESET', 'Set', 'ARM', 'Switch', 'is', 'OFF', 'Send', 'LB', 'Konfigürasyon', 'Mesajı2025-06-16', '14:43:26,003:DEBUG', ':', 'UTS', ':', 'MessageOperations::trasmit_message:', 'Set', 'ARM', 'Switch', 'is', 'ON', 'Send', 'TEC', 'Sıcaklık', 'Limit', 'Değeri', 'Üst', 'Limit', '2', 'Derece', 'Send', 'Start', 'IBIT', 'Message', 'Send', 'TEC', 'Sıcaklık', 'Limit', 'Değeri']"
+TestCase001_LBConfiguration,4,Set ARM Switch is ON Send LB CONF Message Set ARM Switch is OFF Send LB CONF Message,19.319,PASS,"['Set', 'ARM', 'Switch', 'is', 'ON', 'Send', 'LB', 'CONF', 'Message', 'Set', 'ARM', 'Switch', 'is', 'OFF', 'Send', 'LB', 'CONF', 'Message']"
+TestCase001_LBConfiguration_aug,4,ARM Message Switch is,18.717232986617233,PASS,
+TestCase002_IBITBaslatma_aug,4,Message Switch OFF Start,20.711413646503374,PASS,
+TestCase001_LBConfiguration_aug,4,Set Switch Send Message,19.47043281521858,PASS,
+TestCase003_SYYDurumBilgileri_aug,6,SYY Message OFF Message State Start,32.51708402413911,PASS,
+TestCase010_LB_OperatingMode_FaultyStatus_aug,7,Start ARM LB Message Sıcaklık Limit :,17.02856977872151,FAIL,
+TestCase010_LB_OperatingMode_FaultyStatus_aug,7,RESET Turn : Konfigürasyon Limit Sıcaklık Send,16.6565898875703,FAIL,
+TestCase001_LBConfiguration_aug,4,CONF Send Message ARM,19.623179296482572,PASS,

@@ -1,0 +1,511 @@
+2025-06-16 14:39:21,966:DEBUG : UTS : Power Supply 0 is not Connected
+2025-06-16 14:39:21,966: DEBUG : UTS : Power supply List = []
+2025-06-16 14:39:21,968: INFO : UTS : SoftwareTest.py script is running...
+2025-06-16 14:39:21,968:INFO : UTS : ApiWrapper::set_protocol_type: Protocol
+type is set to serials
+2025-06-16 14:39:21,968:DEBUG : UTS :
+DEBUG: Rest.post:uri=http://localhost:8000/serials/1/configs
+2025-06-16 14:39:21,976:INFO : UTS :
+ApiWrapper:: post_configure_serial_post_message: Configure UTS server.
+uri=/serials/1/configs, RequestBody={'maxMessageSize': 65000, 'bufferSize':
+65000, 'overwriteEnabled': False, 'startofHeader': [215], 'timeoutAsMs': 200,
+'serialInterfaceType': 'RS-422', 'baudRate': 921600, 'dataBits': '8',
+'stopBits': '1', 'parity': 'NONE', 'flowControl': 'NONE'}
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '49'),
+resJson={'status': 'OK', 'code': 200, 'message': 'Config set'}
+2025-06-16 14:39:22,985:DEBUG : UTS :
+DEBUG: Rest.post:uri=http://localhost:8000/serials/configs/complete
+2025-06-16 14:39:25,446:INFO : UTS : ApiWrapper::post_configure_done_message:
+Configure done message send UTS server. uri=/serials/configs/complete
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '50'},
+resJson={'status': 'OK', 'code': 200,
+2025-06-16 14:39:28,457:DEBUG : UTS :
+'message': 'Config done'}
+DEBUG: Rest.post:uri=http://localhost:8000/serials/2/configs
+2025-06-16 14:39:28,461:INFO : UTS :
+ApiWrapper::post_configure_serial_post_message: Configure UTS server.
+uri=/serials/2/configs, RequestBody={'maxMessageSize': 65000, 'bufferSize':
+65000, 'overwriteEnabled': False, 'startofHeader': [199], 'timeoutAsMs': 200,
+'serialInterfaceType': 'RS-422', 'baudRate': 921600, 'dataBits': '8'
+'stopBits': '1', 'parity': 'NONE', 'flowControl': 'NONE'}
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '49'},
+resJson={'status': 'OK', 'code': 200, 'message': 'Config set'}
+2025-06-16 14:39:29,477:DEBUG : UTS :
+DEBUG: Rest.post:uri=http://localhost:8000/serials/configs/complete
+2025-06-16 14:39:31,940:INFO : UTS : ApiWrapper::post_configure_done_message:
+Configure done message send UTS server. uri=/serials/configs/complete
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '50'},
+resJson={'status': 'OK', 'code': 200, 'message': 'Config done'}
+2025-06-16 14:39:34,950:INFO : UTS : [TESTCASE] TestCase001_LBConfiguration is
+running...
+2025-06-16 14:39:34,950:INFO : UTS : Running LB Konfigürasyon Bilgileri
+Traceality YGÖ-1
+2025-06-16 14:39:34,950:DEBUG : UTS :
+DEBUG: Rest.post:uri=http://localhost:8000/serials/1/configs
+2025-06-16 14:39:34,954:INFO : UTS :
+ApiWrapper::post_configure_serial_post_message: Configure UTS server.
+uri=/serials/1/configs, RequestBody={'maxMessageSize': 65000, 'bufferSize':
+65000, 'overwriteEnabled': False, 'startofHeader': [53], 'timeoutAsMs': 10,
+'serialInterfaceType': 'RS-422', 'baudRate': 921600, 'dataBits': '8',
+'stopBits': '1', 'parity': 'NONE', 'flowControl': 'NONE'}
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type': 'application/json', 'Connection': 'keep-alive', 'Content-Length': '49'},
+resJson={'status': 'OK', 'code': 200, 'message': 'Config set'}
+2025-06-16 14:39:35,956:DEBUG : UTS :
+DEBUG: Rest.post:uri=http://localhost:8000/serials/configs/complete
+2025-06-16 14:39:38,461:INFO : UTS : ApiWrapper::post_configure_done_message:
+Configure done message send UTS server. uri=/serials/configs/complete
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '50'},
+resJson={'status': 'OK', 'code': 200, 'message': 'Config done'}
+2025-06-16 14:39:41,464:INFO
+2025-06-16 14:39:43,091:INFO
+2025-06-16 14:39:43,092:INFO :
+: UTS: [STEP] 1: Set ARM Switch is ON
+: UTS : Verify Whether ARM Switch is ON
+UTS : [STEP] 2: Send LB CONF Message
+2025-06-16 14:39:43,092:DEBUG : UTS : MessageOperations::trasmit_message:
+{'message': [53, 25, 0, 1, 0, 0, CRC]} will be sent with post_message
+2025-06-16 14:39:43,092:DEBUG : UTS:
+DEBUG: Rest.post:uri=http://localhost:8000/serials/1/messages
+2025-06-16 14:39:43,101:INFO : UTS : ApiWrapper::post_messages: Sent to UTS
+server. uri=/serials/1/messages
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '108'},
+resJson={'statusInfo': {'status': 'OK', 'code': 200, 'message': 'Message sent
+successfully'}, 'timestamp': 1750073983098527)
+2025-06-16 14:39:44,114:DEBUG : UTS
+DEBUG:Rest.get:uri=http://localhost:8000/serials/1/messages
+2025-06-16 14:39:44,120:DEBUG : UTS : MessageOperations::receive_message:
+MessageCount = 1 is received!
+2025-06-16 14:39:44,120:DEBUG : UTS : MessageOperations::receive_message:
+MessageCount = [53, 25, 1, 0, 0] is taken!
+2025-06-16 14:39:44,120:PASS : UTS : ACK is Equal<br/>[EXPECTED] 0<br/>[RECEIVE]
+0
+2025-06-16 14:39:44,121:DEBUG : UTS :
+DEBUG:Rest.post:uri=http://localhost:8000/serials/1/configs
+2025-06-16 14:39:44,125:INFO: UTS :
+ApiWrapper::post_configure_serial_post_message: Configure UTS server.
+uri=/serials/1/configs, RequestBody={'maxMessageSize': 65000, 'bufferSize':
+65000, 'overwriteEnabled': False, 'startOfHeader': [53], 'timeoutAsMs': 10,
+'serialInterfaceType': 'RS-422', 'baudRate': 921600, 'dataBits': ,8.
+'stopBits': '1', 'parity': 'NONE', 'flowControl': 'NONE'}
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '49'},
+resJson={'status': 'OK', 'code': 200, 'message': 'Config set'}
+2025-06-16 14:39:45,133:DEBUG : UTS:
+DEBUG: Rest.post:uri=http://localhost:8000/serials/configs/complete
+2025-06-16 14:39:47,460:INFO : UTS : ApiWrapper::post_configure_done_message:
+Configure done message send UTS server. uri=/serials/configs/complete
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '50'},
+resJson={'status': 'OK', 'code': 200, 'message': 'Config done'}
+2025-06-16 14:39:50,474:INFO : UTS : [STEP] 3: Set ARM Switch is OFF
+2025-06-16 14:39:53,241:INFO
+2025-06-16 14:39:53,242:INFO
+: UTS : Verify Whether ARM Switch is OFF
+: UTS : [STEP] 4: Send LB CONF Message
+2025-06-16 14:39:53,242:DEBUG : UTS : MessageOperations::trasmit_message:
+{'message': [53, 25, 0, 1, 0, 0, CRC]} will be sent with post_message
+2025-06-16 14:39:53,242:DEBUG : UTS :DEBUG:Rest.post:uri=http://localhost:8000/serials/1/messages
+2025-06-16 14:39:53,249: INFO : UTS : ApiWrapper::post_messages: Sent to UTS
+server. uri=/serials/1/messages
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '108'},
+resJson={'statusInfo': {'status': 'OK', 'code': 200, 'message': 'Message sent
+successfully'}, 'timestamp': 1750073993249407}
+2025-06-16 14:39:54,265:DEBUG : UTS
+DEBUG:Rest.get:uri=http://localhost:8000/serials/1/messages
+2025-06-16 14:39:54, 269: DEBUG : UTS : MessageOperations::receive_message:
+MessageCount = 1 is received!
+2025-06-16 14:39:54,269: DEBUG : UTS: MessageOperations::receive_message:
+MessageCount = [53, 25, 1, 0, 0] is taken!
+2025-06-16 14:39:54, 269: PASS : UTS : ACK is Equal<br/>[EXPECTED] 0<br/>[RECEIVE]
+0
+2025-06-16 14:39:54,270:INFO : UTS : [TESTCASE] TestCase002_IBITBaslatma is
+running...
+2025-06-16 14:39:54, 270: INFO : UTS : Running IBIT Baslatma Traceality YGÖ-339
+2025-06-16 14:39:54,270:DEBUG : UTS :
+DEBUG: Rest.post:uri=http://localhost:8000/serials/1/configs
+2025-06-16 14:39:54,274:INFO : UTS :
+ApiWrapper::post_configure_serial_post_message: Configure UTS server.
+uri=/serials/1/configs, RequestBody={'maxMessageSize': 65000, 'bufferSize':
+65000, 'overwriteEnabled': False, 'startofHeader': [53], 'timeoutAsMs': 10,
+'serialInterfaceType': 'RS-422', 'baudRate': 921600, 'dataBits': '8',
+'stopBits': '1', 'parity': 'NONE', 'flowControl': 'NONE'}
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '49'},
+resJson={'status': 'OK', 'code': 200, 'message': 'Config set'}
+2025-06-16 14:39:55,281:DEBUG : UTS :
+DEBUG:Rest.post:uri=http://localhost:8000/serials/configs/complete
+2025-06-16 14:39:57,863:INFO : UTS : ApiWrapper::post_configure_done_message:
+Configure done message send UTS server. uri=/serials/configs/complete
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '50'},
+resJson={'status': 'OK', 'code': 200, 'message': 'Config done'}
+2025-06-16 14:40:00,876:INFO : UTS : [STEP] 1: Set ARM Switch is
+NO
+2025-06-16 14:40:02,842:INFO : UTS : Verify Whether ARM Switch is ON
+2025-06-16 14:40:02,843:INFO : UTS : [STEP] 2: Send Start IBIT Message
+2025-06-16 14:40:02,843:DEBUG : UTS : MessageOperations::trasmit_message:
+{'message': [53, 25, 0, 0, 1, CRC]} will be sent with post_message
+2025-06-16 14:40:02,843:DEBUG : UTS :
+DEBUG:Rest.post:uri=http://localhost:8000/serials/1/messages
+2025-06-16 14:40:02,850: INFO : UTS : ApiWrapper::post_messages: Sent to UTS
+server. uri=/serials/1/messages
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '108'},
+resJson={'statusInfo': {'status': 'OK', 'code': 200, 'message': 'Message sent
+successfully'}, 'timestamp': 1750074002850244}
+2025-06-16 14:40:03,865:DEBUG : UTS:
+DEBUG:Rest.get:uri=http://localhost:8000/serials/1/messages
+2025-06-16 14:40:03,872:DEBUG : UTS : MessageOperations::receive_message:
+MessageCount = 1 is received!
+2025-06-16 14:40:03,873:DEBUG : UTS : MessageOperations::receive_message:MessageCount = [53, 25, 1, 0, 1] is taken!
+2025-06-16 14:40:03,873:PASS : UTS : ACK is Equal<br/>[EXPECTED] 1<br/>[RECEIVE)
+1
+2025-06-16 14:40:03,873:DEBUG : UTS:
+DEBUG:Rest.post:uri=http://localhost:8000/serials/1/configs
+2025-06-16 14:40:03,876:INFO : UTS :
+ApiWrapper::post_configure_serial_post_message: Configure UTS server.
+10,
+uri=/serials/1/configs, RequestBody={'maxMessageSize': 65000, 'bufferSize':
+65000, 'overwriteEnabled': False, 'startOfHeader': [53], 'timeoutAsMs':
+'serialInterfaceType': 'RS-422', 'baudRate': 921600, 'dataBits': '8',
+'stopBits': '1', 'parity': 'NONE', 'flowControl': 'NONE'}
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '49'},
+resJson={'status': 'OK', 'code': 200, 'message': 'Config set'}
+2025-06-16 14:40:04,889:DEBUG : UTS :
+DEBUG:Rest.post:uri=http://localhost:8000/serials/configs/complete
+2025-06-16 14:40:07,314:INFO : UTS : ApiWrapper::post_configure_done_message:
+Configure done message send UTS server. uri=/serials/configs/complete
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '50'},
+resJson={'status': 'OK', 'code': 200, 'message': 'Config done'}
+2025-06-16 14:40:10,324:INFO : UTS : [STEP] 3: Set ARM Switch is OFF
+2025-06-16 14:40:12,204:INFO: UTS: Verify Whether ARM Switch is OFF
+2025-06-16 14:40:12,204:INFO : UTS : [STEP] 4: Send Start IBIT Message
+2025-06-16 14:40:12,205:DEBUG : UTS : MessageOperations::trasmit_message:
+{'message': [53, 25, 0, 0, 1, CRC]} will be sent with post_message
+2025-06-16 14:40:12,205:DEBUG : UTS :
+DEBUG: Rest.post:uri=http://localhost:8000/serials/1/messages
+2025-06-16 14:40:12,212:INFO : UTS : ApiWrapper::post_messages: Sent to UTS
+server. uri=/serials/1/messages
+resStatusCode=200, resHeader={'Server': 'oatpp/f.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '108'},
+resJson={'statusInfo': {'status': 'OK', 'code': 200, 'message': 'Message sent
+successfully'}, 'timestamp': 1750074012211601}
+2025-06-16 14:40:13,222:DEBUG : UTS :
+DEBUG:Rest.get:uri=http://localhost:8000/serials/1/messages
+2025-06-16 14:40:13,226:DEBUG : UTS: MessageOperations::receive_message:
+MessageCount = 1 is received!
+2025-06-16 14:40:13,226:DEBUG : UTS : MessageOperations::receive_message:
+MessageCount = [53, 25, 1, 0, 1] is taken!
+2025-06-16 14:40:13,226:PASS : UTS : ACK is Equal<br/>[EXPECTED] 1<br/>[RECEIVE]
+1
+2025-06-16 14:40:13,227:INFO : UTS : [TESTCASE] TestCase003_SYYDurumBilgileri is
+running...
+2025-06-16 14:40:13,227:INFO : UTS : Running SYY Durum Bilgileri Traceality
+YGÖ-340
+2025-06-16 14:40:13,227:DEBUG: UTS :
+DEBUG:Rest.post:uri=http://localhost:8000/serials/1/configs
+2025-06-16 14:40:13,231:INFO : UTS:
+ApiWrapper::post_configure_serial_post_message: Configure UTS server.
+uri=/serials/1/configs, RequestBody={'maxMessageSize': 65000, 'bufferSize':
+65000, 'overwriteEnabled': False, 'startOfHeader': [53], 'timeoutAsMs': 10,
+'serialInterfaceType': 'RS-422', 'baudRate': 921600, 'dataBits': '8',
+'stopBits': '1', 'parity': 'NONE', 'flowControl': 'NONE'}resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '49'},
+resJson={'status': 'OK', 'code': 200, 'message': 'Config set'}
+2025-06-16 14:40:14,244:DEBUG : UTS:
+DEBUG:Rest.post:uri=http://localhost:8000/serials/configs/complete
+2025-06-16 14:40:16;600:INFO : UTS : ApiWrapper::post_configure_done_message:
+Configure done message send UTS server. uri=/serials/configs/complete
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '50'},
+resJson={'status': 'OK', 'code': 200, 'message': 'Config done'}
+2025-06-16 14:40:19,600:INFO : UTS : [STEP] 1: Set ARM Switch is ON
+2025-06-16 14:40:21,530:INFO : UTS : Verify Whether ARM Switch is ON
+2025-06-16 14:40:21,531:INFO : UTS : [STEP] 2: Send SYY State Message
+2025-06-16 14:40:21,531:DEBUG : UTS: MessageOperations::trasmit_message:
+{'message': [53, 25, 0, 9, 2, 0, 0, 0, 0, 0, 0, 0, CRC]} will be sent with
+post_message
+2025-06-16 14:40:21,531:DEBUG : UTS :
+DEBUG: Rest.post:uri=http://localhost:8000/serials/1/messages
+2025-06-16 14:40:21,541: INFO : UTS : ApiWrapper::post_messages: Sent to UTS
+server. uri=/serials/1/messages
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '108'},
+resJson={'statusInfo': {'status': 'OK', 'code': 200, 'message': 'Message sent
+successfully'}, 'timestamp': 1750074021538711}
+2025-06-16 14:40:22,556:DEBUG : UTS :
+DEBUG: Rest.get:uri=http://localhost:8000/serials/1/messages
+2025-06-16 14:40:22,560:DEBUG : UTS : MessageOperations::receive_message:
+MessageCount = 1 is received!
+2025-06-16 14:40:22,561:DEBUG : UTS : MessageOperations::receive_message:
+MessageCount = [53, 25, 1, 0, 2] is taken!
+2025-06-16 14:40:22,561:PASS : UTS : ACK is Equal<br/>[EXPECTED] 2<br/>[RECEIVE]
+2
+2025-06-16 14:40:22,561:DEBUG : UTS :
+DEBUG: Rest.post:uri=http://localhost:8000/serials/1/configs
+2025-06-16 14:40:22,564:INFO : UTS:
+ApiWrapper::post_configure_serial_post_message: Configure UTS server.
+uri=/serials/1/configs, RequestBody={'maxMessageSize': 65000, 'bufferSize':
+65000, 'overwriteEnabled': False, 'startofHeader': [53], 'timeoutAsMs': 10,
+'serialInterfaceType': 'RS-422', 'baudRate': 921600, 'dataBits': '8',
+'stopBits': '1', 'parity': 'NONE', 'flowControl': 'NONE'}
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '49'},
+resJson={'status': 'OK', 'code': 200, 'message': 'Config set'}
+2025-06-16 14:40:23,577:DEBUG : UTS:
+DEBUG:Rest.post:uri=http://localhost:8000/serials/configs/complete
+2025-06-16 14:40:25,941:INFO: UTS : ApiWrapper::post_configure_done_message:
+Configure done message send UTS server. uri=/serials/configs/complete
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '50'},
+resJson={'status': 'OK', 'code': 200, 'message': 'Config done'}
+2025-06-16 14:40:28,942:INFO : UTS : [STEP] 3: Set ARM Switch is OFF
+2025-06-16 14:40:31,122:INFO : UTS: Verify Whether ARM Switch is OFF
+2025-06-16 14:40:31,123:INFO : UTS : [STEP] 4: Send SYY State Message
+2025-06-16 14:40:31,123:DEBUG : UTS : MessageOperations::trasmit_message:{'message': [53, 25, 0, 9, 2, 0, 0, 0, e, e, e, e, CRC]} will be sent with
+post_message
+2025-06-16 14:40:31,123:DEBUG : UTS :
+DEBUG:Rest.post:uri=http://localhost:8000/serials/1/messages
+2025-06-16 14:40:31,130:INFO:
+server. uri=/serials/1/messages
+UTS: ApiWrapper::post_messages: Sent to UTS
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '108'},
+resJson={'statusInfo': {'status': 'OK', 'code':
+successfully'}, 'timestamp': 1750074031129713}
+2025-06-16 14:40:32,142:DEBUG : UTS:
+200, 'message': 'Message sent
+DEBUG:Rest.get:uri=http://localhost:8000/serials/1/messages
+2025-06-16 14:40:32,147:DEBUG
+MessageCount = 1 is received!
+: UTS : MessageOperations::receive_message:
+2025-06-16 14:40:32,147:DEBUG : UTS : MessageOperations::receive_message:
+MessageCount = [53, 125, 1, 0, 2] is taken!
+2025-06-16 14:40:32,148:PASS : UTS : ACK is Equal<br/>[EXPECTED] 2<br/>[RECEIVE]
+2
+2025-06-16 14:40:32,148:DEBUG : UTS :
+DEBUG: Rest.post:uri=http://localhost:8000/serials/1/configs
+2025-06-16 14:40:32,152:INFO : UTS :
+ApiWrapper::post_configure_serial_post_message: Configure UTS server.
+uri=/serials/1/configs, RequestBody={'maxMessageSize': 65000, 'bufferSize':
+65000, 'overwriteEnabled': False, 'startOfHeader': [53], 'timeoutAsMs': 10,
+'serialInterfaceType': 'RS-422', 'baudRate': 921600, 'dataBits': '8',
+'stopBits': '1', 'parity': 'NONE', 'flowControl': 'NONE'}
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '49'},
+resJson={'status': 'OK', 'code': 200, 'message': 'Config set'}
+2025-06-16 14:40:33,159:DEBUG : UTS :
+DEBUG: Rest.post:uri=http://localhost:8000/serials/configs/complete
+2025-06-16 14:40:35,551:INFO : UTS: ApiWrapper::post_configure_done_message:
+Configure done message send UTS server. uri=/serials/configs/complete
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '50'},
+resJson={'status': 'OK', 'code': 200, 'message': 'Config done'}
+2025-06-16 14:40:38,562:INFO : UTS : [STEP] 5: Send Start IBIT Message
+2025-06-16 14:40:38,562:DEBUG : UTS : MessageOperations::trasmit_message:
+{'message': [53, 125, 0, 0, 1, CRC]} will be sent with post_message
+2025-06-16 14:40:38,563:DEBUG : UTS :
+DEBUG: Rest.post:uri=http://localhost:8000/serials/1/messages
+2025-06-16 14:40:38,568:INFO : UTS : ApiWrapper::post_messages: Sent to
+server. uri=/serials/1/messages
+UTS
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '108'},
+resJson={'statusInfo': {'status': 'OK', 'code': 200, 'message': 'Message sent
+successfully'}, 'timestamp': 1750074038568358}
+2025-06-16 14:40:40,589:INFO : UTS : Sleep 1 sn..
+2025-06-16 14:40:40,589:INFO : UTS: [STEP] 6: Send SYY State Message
+2025-06-16 14:40:40,590:DEBUG : UTS : MessageOperations::trasmit_message:
+{'message': [53, 125, 0, 9, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, CRC]} will be sent
+with post_message
+2025-06-16 14:40:40,591:DEBUG : UTS :
+DEBUG: Rest.post:uri=http://localhost:8000/serials/1/messages2025-06-16 14:40:40,596:INFO : UTS : ApiWrapper:: post_messages: Sent to UTS
+server. uri=/serials/1/messages
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '108'},
+resJson={'statusInfo': {'status': 'OK', 'code': 200, 'message': 'Message sent
+successfully'}, 'timestamp': 1750074040596025}
+2025-06-16 14:40:41,607:DEBUG : UTS:
+DEBUG:Rest.get:uri=http://localhost:8000/serials/1/messages
+2025-06-16 14:40:41,612:DEBUG : UTS : MessageOperations::receive_message:
+MessageCount = 2 is received!
+2025-06-16 14:40:41,613:DEBUG : UTS : MessageOperations::receive_message:
+MessageCount = [53, 125, 1, 0, 2] is taken!
+2025-06-16 14:40:41,613:PASS : UTS : ACK is Equal<br/>[EXPECTED] 2<br/>[RECEIVE]
+2
+2025-06-16 14:40:41,613:DEBUG : UTS :
+DEBUG:Rest.post:uri=http://localhost:8000/serials/1/configs
+2025-06-16 14:40:41,618:INFO : UTS :
+ApiWrapper::post_configure_serial_post_message: Configure UTS server.
+uri=/serials/1/configs, RequestBody={'maxMessageSize': 65000, 'bufferSize':
+65000, 'overwriteEnabled': False, 'startOfHeader': [215], 'timeoutAsMs':
+'serialInterfaceType': 'RS-422', 'baudRate': 921600, 'dataBits': '8',
+'stopBits': '1', 'parity': 'NONE', 'flowControl': 'NONE'}
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '49'{,
+resJson={'status': 'OK', 'code': 200, 'message': 'Config set'}
+10,
+2025-06-16 14:40:42,622:DEBUG : UTS :
+DEBUG:Rest.post:uri=http://localhost:8000/serials/configs/complete
+2025-06-16 14:40:45,010:INFO : UTS : ApiWrapper::post_configure_done_message:
+Configure done message send UTS server. uri=/serials/configs/complete
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '50'},
+resJson={'status': 'OK', 'code': 200, 'message': 'Config done'}
+2025-06-16 14:43:14,090:INFO : UTS : [TESTCASE] TestCase010_LB_OperatingMode_FaultyStatus is running...
+2025-06-16 14:43:14,090:INFO : UTS: Running LB Mod Durumları Çalışma Modu
+Arızalı Durumu Traceality YGÖ-713
+2025-06-16 14:43:14,090:INFO : UTS: [STEP] 1: Turn LB Power ON or RESET
+2025-06-16 14:43:21,177:INFO : UTS : Turn LB Power is ON or RESET
+: 2025-06-16 14:43:24,187:INFO UTS : Sleep 3 sn..
+2025-06-16 14:43:24,187:INFO
+2025-06-16 14:43:25,995:INFO
+: UTS: [STEP] 2: Set ARM Switch is OFF
+: UTS : Verify Whether ARM Switch is OFF
+2025-06-16 14:43:25,995:DEBUG: UTS :
+DEBUG:Rest.get:uri=http://localhost:8000/serials/1/messages
+2025-06-16 14:43:26,000:DEBUG
+MessageCount = 180 is received!
+2025-06-16 14:43:26,001:DEBUG :
+: UTS : MessageOperations::receive_message:
+UTS : MessageOperations::check_message_criteria:
+Receive Message: bytearray(b'\x71\x00\x71\x87\x00\x01\x00\x00\x00\x00\x00*')
+2025-06-16 14:43:26,001: DEBUG : UTS : MessageOperations::receive_message:
+MessageCount = [15, 18, 0, 17, 18, 0, 0, 0, 0, 0, CRC] is taken!
+2025-06-16 14:43:26,002:PASS : UTS : LBMod is Equal<br/>[EXPECTED]
+Bekleme<br/>[RECEIVE] Bekleme
+2025-06-16 14:43:26,002:PASS : UTS : LBStatus is Equal<br/>[EXPECTED]
+AcılısDurumu<br/>[RECEIVE] AcılısDurumu
+2025-06-16 14:43:26,002:INFO : UTS : [STEP] 3: Send LB Konfigürasyon Mesajı2025-06-16 14:43:26,003:DEBUG : UTS : MessageOperations::trasmit_message:
+{'message': [53, 125, 0, 1, 0, 0, CRC]} will be sent with post_message
+2025-06-16 14:43:26,003:DEBUG : UTS :
+DEBUG:Rest.post:uri=http://localhost:8000/serials/1/messages
+2025-06-16 14:43:26,009:INFO : UTS : ApiWrapper::post_messages: Sent to
+server. uri=/serials/1/messages
+UTS
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '108'},
+resJson={'statusInfo': {'status': 'OK', 'code': 200, 'message': 'Message sent
+successfully'}, 'timestamp': 1750074206009300}
+2025-06-16 14:43:27,021:DEBUG : UTS :
+DEBUG:Rest.get:uri=http://localhost:8000/serials/1/messages
+2025-06-16 14:43:27,026:DEBUG : UTS : MessageOperations::receive_message:
+MessageCount = 20 is received!
+2025-06-16 14:43:27,026:DEBUG : UTS : MessageOperations::check_message_criteria:
+Receive Message:
+bytearray(b'\xl\x00\x11\x80\x00\x00\x01\x01\x05\x01\x00\x00\x00\x00\x00$')
+2025-06-16 14:43:27,026:DEBUG : UTS : MessageOperations::receive_message:
+MessageCount = [15, 18, 0, 17, 0, 0, 0, 0, 0, CRC] is taken!
+2025-06-16 14:43:27,026:PASS : UTS : LBMod is Equal<br/>[EXPECTED]
+Bekleme<br/>[RECEIVE] Bekleme
+2025-06-16 14:43:27,027:PASS : UTS: LBStatus is Equal<br/>[EXPECTED]
+HazırDurumu<br/>[RECEIVE] HazırDurumu
+2025-06-16 14:43:27,027:INFO : UTS : [STEP] 4: Set ARM Switch is ON
+2025-06-16 14:43:29,242:INFO UTS: Verify Whether ARM Switch is ON
+2025-06-16 14:43:29,243:DEBUG : UTS :
+DEBUG:Rest.get:uri=http://localhost:8000/serials/1/messages
+2025-06-16 14:43:29,247: DEBUG
+MessageCount = 45 is received!
+: UTS : MessageOperations::receive_message:
+2025-06-16 14:43:29,248:DEBUG : UTS : MessageOperations::check_message_criteria:
+Receive Message:
+bytearray(b'\xdl\x00\x1\x80\x00\x00\x00\x00\x00\x00\x00\x00\x02\x03\x00\x00\x00\
+x00\x1f')
+2025-06-16 14:43:29,248:DEBUG : UTS : MessageOperations::receive_message:
+MessageCount = [15, 18, 0, 17, 128, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 7, 1, 0, 0,
+0, 0, CRC] is taken!
+2025-06-16 14:43:29,248:PASS : UTS : LBMod is Equal<br/>[EXPECTED]
+Calısma<br/>[RECEIVE] Calısma
+2025-06-16 14:43:29,249:INFO : UTS: [STEP] 5: Send TEC Sıcaklık Limit Değeri Üst Limit 2 Derece
+0,
+2025-06-16 14:43:29, 249:DEBUG : UTS : MessageOperations::trasmit_message:
+{'message': [75, 5, 0, 27, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+0, 0, 0, 0, CRC]} will be sent with post_message
+2025-06-16 14:43:29,249:DEBUG : UTS:
+DEBUG:Rest.post:uri=http://localhost:8000/serials/2/messages
+2025-06-16 14:43:29,257:INFO : UTS : ApiWrapper::post_messages: Sent to UTS
+server. uri=/serials/2/messages
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '108'},
+resJson={'statusInfo': {'status': 'OK', 'code': 200, 'message': 'Message sent
+successfully'}, 'timestamp': 1750074209256482}
+2025-06-16 14:43:30,271:DEBUG : UTS :
+DEBUG:Rest.get:uri=http://localhost:8000/serials/1/messages
+2025-06-16 14:43:30,274:DEBUG : UTS : MessageOperations::receive_message:MessageCount = 20 is received!
+2025-06-16 14:43:30, 275:DEBUG : UTS : MessageOperations::check_message_criteria:
+Receive Message:
+bytearray(b'\xl\x00\x11\x80\x00\x00\x00\x00\x00\x00\x00\x00x00\x00')
+2025-06-16 14:43:30, 275:DEBUG : UTS : MessageOperations::receive_message:
+MessageCount = [15, 18, 0, 17, 128, 0, 0, 0, 0, 0, 0, CRC] is taken!
+2025-06-16 14:43:30,276:FAIL : UTS : LBStatus is Equal<br/>[EXPECTED]
+ArızalıDurumu<br/>[RECEIVE] LazerAteslemeDurumu
+2025-06-16 14:43:30,276:INFO : UTS : [STEP] 6: Send Start IBIT Message
+2025-06-16 14:43:30, 276:DEBUG : UTS : MessageOperations::trasmit_message:
+{'message': [53, 125, 0, 0, 1, CRC]} will be sent with post_message
+2025-06-16 14:43:30,276:DEBUG : UTS :
+DEBUG:Rest.post:uri=http://loçalhost:8000/serials/1/messages
+2025-06-16 14:43:30,281:INFO : UTS : ApiWrapper::post_messages: Sent to UTS
+server. uri=/serials/1/messages
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '108'},
+resJson={'statusInfo': {'status': 'OK', 'code': 200, 'message': 'Message sent
+successfully'}, 'timestamp': 1750074210281450}
+2025-06-16 14:43:31,282:DEBUG: UTS :
+DEBUG:Rest.get:uri=http://localhost:8000/serials/1/messages
+2025-06-16 14:43:31,286:DEBUG : UTS : MessageOperations::receive_message:
+MessageCount = 21 is received!
+2025-06-16 14:43:31,286:DEBUG ⑆ UTS: MessageOperations::check_message_criteria:
+Receive Message: bytearray(b'\xl\x00\x11\x80\x00\x00\x00\x00\x00\x00\x00\x00')
+2025-06-16 14:43:31,287:DEBUG : UTS : MessageOperations::receive_message:
+MessageCount = [15, 18, 0, 17, 2, 3, 7, 1, 0, 0, 0, 0, 0, CRC] is taken!
+2025-06-16 14:43:31,287:FAIL : UTS : LBMod is Equal<br/>[EXPECTED]
+Test<br/>[RECEIVE] Calısma
+2025-06-16 14:43:31,287:FAIL : UTS : LBStatus is Equal<br/>[EXPECTED]
+IBITDurumu<br/>[RECEIVE] LazerAteslemeDurumu
+2025-06-16 14:43:31,287:INFO : UTS : [STEP] 7: Send TEC Sıcaklık Limit Değeri
+Üst Limit 40 Derece
+2025-06-16 14:43:31,288:DEBUG : UTS : MessageOperations::trasmit_message:
+{'message': [75, 5, 0, 27, 0, 0, 0, 0, 0, 0, 0, 0, CRC]} will be sent with
+post_message
+2025-06-16 14:43:31,288:DEBUG : UTS:
+DEBUG: Rest.post:uri=http://localhost:8000/serials/2/messages
+2025-06-16 14:43:31,292:INFO : UTS : ApiWrapper:: post_messages: Sent to UTS
+server. uri=/serials/2/messages
+resStatusCode=200, resHeader={'Server': 'oatpp/1.3.0', 'Content-Type':
+'application/json', 'Connection': 'keep-alive', 'Content-Length': '108'},
+resJson={'statusInfo': {'status': 'OK', 'code': 200, 'message': 'Message sent
+successfully'}, 'timestamp': 1750074211292548}
+2025-06-16 14:43:32,302:INFO : UTS : End of Script Run... result=None
+2025-06-16 14:43:32,302:WARNING : UTS : No Jira Connection
+2025-06-16 14:43:32,303:ERROR : UTS : An Error occured meta::pre_post_process:
+while creating a test execution issue in JIRA! Exception e : 'NoneType' object
+has no attribute 'key'
+2025-06-16 14:43:32,304:DEBUG : UTS : HtmlResultCreator::create_html: In
+entrance: logFile=D:\YTDMM\Repo\yildirim\Lazer Birimi\LB&RT-OFP\Software
+Test\logs/SoftwareTest_16_06_2025_143921.out, scriptName=SoftwareTest, jiraId=No
+Issue, startDate=2025-06-16 14:39:21, duration=0:04:10, pcName=EOKTSTMLAB,
+userName=gozdedemirel2025-06-16 14:43:32,336:DEBUG : UTS : HtmlResultCreator::create_html:
+templatesPath=D:\YTDMM\Repo\commonlib
+2025-06-16 14:43:32,341:DEBUG
+Calculating percentages!
+2025-06-16 14:43:32, 342:DEBUG :
+: UTS : HtmlResultCreator::create_html:
+UTS : HtmlResultCreator::create_html:
+outputHtml: scriptName=SoftwareTest, stepPassRate=63.888888888888886
+render
+2025-06-16 14:43:32,357:DEBUG : UTS : HtmlResultCreator::create_html: return
+from: last step, testResult=FAIL, htmlFilePath=D:\YTDMM\Repo\yildirim\Lazer
+Birimi\LB&RT-OFP\Software Test\logs\SoftwareTest16_Jun_2025_144332.html
+2025-06-16 14:43:32,360: DEBUG : UTS : meta::pre_post_process:
+testResult={testResult}, htmlPath={htmlPath}
+2025-06-16 14:43:32,360:DEBUG : UTS : 'meta::pre_post_process: Something wrong
+in jiraHandler

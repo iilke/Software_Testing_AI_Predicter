@@ -1,0 +1,5 @@
+test_id,num_steps,step_keywords,duration,result
+TestCase001_LBConfiguration,4,Set ARM Switch is ON Send LB CONF Message Set ARM Switch is OFF Send LB CONF Message,19.319,PASS
+TestCase002_IBITBaslatma,4,Set ARM Switch is Send Start IBIT Message Set ARM Switch is OFF Send Start IBIT Message,18.956,PASS
+TestCase003_SYYDurumBilgileri,6,Set ARM Switch is ON Send SYY State Message Set ARM Switch is OFF Send SYY State Message Send Start IBIT Message Send SYY State Message,31.783,PASS
+TestCase010_LB_OperatingMode_FaultyStatus,7,"Turn LB Power ON or RESET Set ARM Switch is OFF Send LB Konfigürasyon Mesajı2025-06-16 14:43:26,003:DEBUG : UTS : MessageOperations::trasmit_message: Set ARM Switch is ON Send TEC Sıcaklık Limit Değeri Üst Limit 2 Derece Send Start IBIT Message Send TEC Sıcaklık Limit Değeri",18.27,FAIL
