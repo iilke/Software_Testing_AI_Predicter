@@ -1,0 +1,405 @@
+test_id,num_steps,step_keywords,duration,result
+TestCase001_LBConfiguration,4,Set ARM Switch is ON Send LB CONF Message Set ARM Switch is OFF Send LB CONF Message,19.319,PASS
+TestCase002_IBITBaslatma,4,Set ARM Switch is Send Start IBIT Message Set ARM Switch is OFF Send Start IBIT Message,18.956,PASS
+TestCase003_SYYDurumBilgileri,6,Set ARM Switch is ON Send SYY State Message Set ARM Switch is OFF Send SYY State Message Send Start IBIT Message Send SYY State Message,31.783,PASS
+TestCase010_LB_OperatingMode_FaultyStatus,7,"Turn LB Power ON or RESET Set ARM Switch is OFF Send LB Konfigürasyon Mesajı2025-06-16 14:43:26,003:DEBUG : UTS : MessageOperations::trasmit_message: Set ARM Switch is ON Send TEC Sıcaklık Limit Değeri Üst Limit 2 Derece Send Start IBIT Message Send TEC Sıcaklık Limit Değeri",18.27,FAIL
+TC001,6,1-Receive 0x7E; 2-Check error handler trigger; 3-Send DATA block; 4-Wait for READY response; 5-Receive ACK 0xAA; 6-Transmit payload 0x01 0x02 0x03,37.6,PASS
+TC002,4,1-Open RS422 channel; 2-Wait for ECHO; 3-Send 0x7E; 4-Receive RESPONSE,24.4,FAIL
+TC003,6,1-Wait 100ms; 2-Receive RESPONSE; 3-Expect response 0x0F; 4-Send INIT command; 5-Send DATA block; 6-Wait for READY response,35.0,FAIL
+TC004,5,1-Switch to RX idle; 2-Send REQUEST; 3-Configure baud rate to 9600; 4-Initialize RS232 line; 5-Receive 0x7E,32.6,PASS
+TC005,4,1-Open RS422 channel; 2-Receive ACK 0xAA; 3-Check error handler trigger; 4-Receive 0x7E,26.2,PASS
+TC006,4,1-Configure baud rate to 19200; 2-Switch baud rate to 38400; 3-Activate loopback mode; 4-Configure baud rate to 9600,24.7,PASS
+TC007,6,1-Receive CRC OK; 2-Wait 100ms; 3-Switch to RX idle; 4-Set DTR low; 5-Wait for READY response; 6-Set RTS low,35.0,PASS
+TC008,5,1-Send REQUEST; 2-Wait 100ms; 3-Send SYNC byte; 4-Send command 0xF0; 5-Set RTS low,30.1,PASS
+TC009,6,1-Send INIT command; 2-Check response timeout; 3-Open RS422 channel; 4-Configure baud rate to 19200; 5-Close RS232 port; 6-Open RS232 port,36.2,PASS
+TC010,4,1-Deactivate loopback; 2-Wait for READY response; 3-Send INIT command; 4-Receive 0x7E,25.2,PASS
+TC011,5,1-Transmit handshake byte 0x55; 2-Log response time; 3-Transmit payload 0x01 0x02 0x03; 4-Check response timeout; 5-Set DTR high,29.6,FAIL
+TC012,4,1-Close RS232 port; 2-Send INIT command; 3-Check response timeout; 4-Open RS422 channel,26.6,PASS
+TC013,6,1-Send REQUEST; 2-Open RS232 port; 3-Initialize RS232 line; 4-Set DTR low; 5-Wait for READY response; 6-Open RS422 channel,37.6,PASS
+TC014,5,1-Initialize RS232 line; 2-Deactivate loopback; 3-Send invalid frame; 4-Transmit handshake byte 0x55; 5-Transmit payload 0x01 0x02 0x03,31.6,PASS
+TC015,4,1-Send DATA block; 2-Close RS232 port; 3-Open RS232 port; 4-Send CONFIG command,24.3,PASS
+TC016,6,1-Open RS422 channel; 2-Wait 100ms; 3-Check response timeout; 4-Deactivate loopback; 5-Open RS232 port; 6-Configure baud rate to 19200,35.5,PASS
+TC017,3,1-Send INIT command; 2-Set RTS high; 3-Wait for READY response,19.5,PASS
+TC018,3,1-Receive 0x7E; 2-Log response time; 3-Send 0x7E,17.7,FAIL
+TC019,3,1-Receive CRC OK; 2-Wait for READY response; 3-Set DTR low,19.9,FAIL
+TC020,4,1-Receive RESPONSE; 2-Check response timeout; 3-Wait for READY response; 4-Receive 0x7E,23.5,PASS
+TC021,3,1-Configure baud rate to 19200; 2-Send invalid frame; 3-Send SYNC byte,17.1,PASS
+TC022,3,1-Wait 100ms; 2-Activate loopback mode; 3-Send INIT command,16.8,PASS
+TC023,4,1-Receive CRC OK; 2-Initialize RS232 line; 3-Open RS232 port; 4-Send 0x7E,22.8,PASS
+TC024,5,1-Transmit payload 0x01 0x02 0x03; 2-Send 0x7E; 3-Send SYNC byte; 4-Check CRC; 5-Set RTS high,32.3,PASS
+TC025,3,1-Receive 0x7E; 2-Send SYNC byte; 3-Switch to RX idle,16.8,PASS
+TC026,3,1-Wait for ECHO; 2-Close RS232 port; 3-Receive 0x7E,17.5,PASS
+TC027,3,1-Open RS232 port; 2-Check error handler trigger; 3-Log response time,20.4,PASS
+TC028,4,1-Switch to RX idle; 2-Check response timeout; 3-Wait for ECHO; 4-Wait for READY response,26.7,PASS
+TC029,5,1-Check error handler trigger; 2-Send SYNC byte; 3-Initialize RS232 line; 4-Check CRC; 5-Receive RESPONSE,29.5,PASS
+TC030,6,1-Send INIT command; 2-Check CRC; 3-Receive SYNC_ACK; 4-Send DATA block; 5-Log response time; 6-Transmit handshake byte 0x55,35.6,PASS
+TC031,5,1-Send invalid frame; 2-Receive 0x7E; 3-Send INIT command; 4-Send SYNC byte; 5-Receive SYNC_ACK,29.3,PASS
+TC032,3,1-Log response time; 2-Check response timeout; 3-Switch to RX idle,18.9,FAIL
+TC033,6,1-Send SYNC byte; 2-Receive CRC OK; 3-Send command 0xF0; 4-Close RS232 port; 5-Open RS422 channel; 6-Configure baud rate to 19200,34.8,PASS
+TC034,4,1-Configure baud rate to 19200; 2-Configure baud rate to 9600; 3-Receive ACK 0xAA; 4-Switch to RX idle,23.1,FAIL
+TC035,4,1-Wait for ECHO; 2-Wait 100ms; 3-Wait for READY response; 4-Switch baud rate to 38400,22.9,PASS
+TC036,3,1-Send SYNC byte; 2-Set RTS low; 3-Open RS232 port,19.7,PASS
+TC037,4,1-Set DTR low; 2-Receive SYNC_ACK; 3-Check CRC; 4-Expect response 0x0F,25.5,PASS
+TC038,5,1-Receive SYNC_ACK; 2-Send CONFIG command; 3-Open RS422 channel; 4-Log response time; 5-Wait 100ms,30.5,PASS
+TC039,6,1-Check CRC; 2-Transmit handshake byte 0x55; 3-Receive 0x7E; 4-Wait for READY response; 5-Log response time; 6-Send command 0xF0,35.1,FAIL
+TC040,6,1-Receive CRC OK; 2-Wait for READY response; 3-Set DTR low; 4-Configure baud rate to 19200; 5-Open RS422 channel; 6-Send command 0xF0,38.9,PASS
+TC041,4,1-Activate loopback mode; 2-Initialize RS232 line; 3-Receive 0x7E; 4-Deactivate loopback,25.3,FAIL
+TC042,6,1-Set RTS low; 2-Open RS232 port; 3-Send DATA block; 4-Deactivate loopback; 5-Set DTR low; 6-Send INIT command,36.7,PASS
+TC043,4,1-Receive CRC OK; 2-Log response time; 3-Configure baud rate to 19200; 4-Send SYNC byte,22.8,PASS
+TC044,4,1-Configure baud rate to 19200; 2-Send invalid frame; 3-Set DTR low; 4-Send REQUEST,22.6,PASS
+TC045,3,1-Send REQUEST; 2-Check error handler trigger; 3-Open RS232 port,16.5,PASS
+TC046,3,1-Set RTS high; 2-Set DTR high; 3-Receive RESPONSE,19.8,PASS
+TC047,4,1-Configure baud rate to 9600; 2-Send INIT command; 3-Receive SYNC_ACK; 4-Set RTS high,25.2,PASS
+TC048,6,1-Switch baud rate to 38400; 2-Send INIT command; 3-Send REQUEST; 4-Transmit payload 0x01 0x02 0x03; 5-Activate loopback mode; 6-Send SYNC byte,34.8,PASS
+TC049,4,1-Receive SYNC_ACK; 2-Close RS232 port; 3-Send SYNC byte; 4-Open RS422 channel,25.5,PASS
+TC050,4,1-Switch to RX idle; 2-Open RS232 port; 3-Activate loopback mode; 4-Receive 0x7E,24.1,PASS
+TC051,4,1-Set DTR high; 2-Check CRC; 3-Send SYNC byte; 4-Expect response 0x0F,23.2,FAIL
+TC052,6,1-Receive RESPONSE; 2-Close RS232 port; 3-Send CONFIG command; 4-Transmit payload 0x01 0x02 0x03; 5-Expect response 0x0F; 6-Transmit handshake byte 0x55,37.3,PASS
+TC053,5,1-Initialize RS232 line; 2-Expect response 0x0F; 3-Set RTS high; 4-Set DTR low; 5-Check error handler trigger,32.9,FAIL
+TC054,6,1-Receive ACK 0xAA; 2-Set RTS high; 3-Receive SYNC_ACK; 4-Open RS232 port; 5-Activate loopback mode; 6-Send REQUEST,35.2,PASS
+TC055,4,1-Send invalid frame; 2-Send command 0xF0; 3-Receive 0x7E; 4-Set RTS high,25.3,PASS
+TC056,3,1-Expect response 0x0F; 2-Configure baud rate to 19200; 3-Check error handler trigger,18.7,PASS
+TC057,5,1-Switch baud rate to 38400; 2-Transmit handshake byte 0x55; 3-Check response timeout; 4-Configure baud rate to 9600; 5-Set DTR low,28.8,PASS
+TC058,5,1-Send 0x7E; 2-Set DTR high; 3-Switch to RX idle; 4-Receive ACK 0xAA; 5-Wait 100ms,29.1,FAIL
+TC059,3,1-Send invalid frame; 2-Receive SYNC_ACK; 3-Wait 100ms,20.0,PASS
+TC060,3,1-Send INIT command; 2-Receive ACK 0xAA; 3-Send invalid frame,20.0,PASS
+TC061,4,1-Transmit handshake byte 0x55; 2-Set DTR high; 3-Deactivate loopback; 4-Receive 0x7E,25.1,PASS
+TC062,3,1-Send INIT command; 2-Receive CRC OK; 3-Receive 0x7E,20.4,FAIL
+TC063,5,1-Transmit payload 0x01 0x02 0x03; 2-Close RS232 port; 3-Set RTS low; 4-Expect response 0x0F; 5-Configure baud rate to 19200,29.2,FAIL
+TC064,3,1-Send command 0xF0; 2-Send DATA block; 3-Set RTS low,17.8,PASS
+TC065,5,1-Send REQUEST; 2-Configure baud rate to 9600; 3-Send DATA block; 4-Send INIT command; 5-Receive 0x7E,32.0,PASS
+TC066,6,1-Send DATA block; 2-Send 0x7E; 3-Send invalid frame; 4-Transmit payload 0x01 0x02 0x03; 5-Open RS232 port; 6-Send command 0xF0,37.3,PASS
+TC067,3,1-Configure baud rate to 19200; 2-Switch baud rate to 38400; 3-Transmit payload 0x01 0x02 0x03,18.8,PASS
+TC068,3,1-Receive RESPONSE; 2-Send CONFIG command; 3-Transmit handshake byte 0x55,17.3,FAIL
+TC069,5,1-Send invalid frame; 2-Check response timeout; 3-Wait 100ms; 4-Open RS422 channel; 5-Initialize RS232 line,32.5,PASS
+TC070,6,1-Deactivate loopback; 2-Send INIT command; 3-Configure baud rate to 19200; 4-Switch baud rate to 38400; 5-Check CRC; 6-Receive 0x7E,35.0,PASS
+TC071,3,1-Transmit handshake byte 0x55; 2-Wait 100ms; 3-Activate loopback mode,18.1,PASS
+TC072,4,1-Activate loopback mode; 2-Receive RESPONSE; 3-Send INIT command; 4-Transmit payload 0x01 0x02 0x03,24.5,PASS
+TC073,5,1-Configure baud rate to 9600; 2-Set RTS high; 3-Expect response 0x0F; 4-Receive ACK 0xAA; 5-Activate loopback mode,30.3,PASS
+TC074,5,1-Send 0x7E; 2-Close RS232 port; 3-Configure baud rate to 19200; 4-Receive ACK 0xAA; 5-Open RS232 port,29.8,PASS
+TC075,6,1-Wait for READY response; 2-Wait for ECHO; 3-Check CRC; 4-Receive SYNC_ACK; 5-Check error handler trigger; 6-Send invalid frame,35.6,PASS
+TC076,4,1-Configure baud rate to 9600; 2-Wait for READY response; 3-Send SYNC byte; 4-Send INIT command,26.3,FAIL
+TC077,6,1-Receive SYNC_ACK; 2-Check response timeout; 3-Switch to RX idle; 4-Send CONFIG command; 5-Send SYNC byte; 6-Activate loopback mode,35.6,PASS
+TC078,6,1-Wait 100ms; 2-Transmit handshake byte 0x55; 3-Receive ACK 0xAA; 4-Check response timeout; 5-Transmit payload 0x01 0x02 0x03; 6-Send command 0xF0,38.8,PASS
+TC079,3,1-Log response time; 2-Receive RESPONSE; 3-Send 0x7E,19.1,PASS
+TC080,3,1-Check CRC; 2-Check response timeout; 3-Switch baud rate to 38400,17.5,PASS
+TC081,4,1-Send DATA block; 2-Send CONFIG command; 3-Switch baud rate to 38400; 4-Expect response 0x0F,24.1,PASS
+TC082,5,1-Initialize RS232 line; 2-Wait for ECHO; 3-Receive CRC OK; 4-Set RTS high; 5-Send REQUEST,30.5,PASS
+TC083,6,1-Set DTR high; 2-Activate loopback mode; 3-Receive RESPONSE; 4-Wait for READY response; 5-Check response timeout; 6-Send 0x7E,38.2,PASS
+TC084,6,1-Receive SYNC_ACK; 2-Set DTR high; 3-Transmit handshake byte 0x55; 4-Close RS232 port; 5-Activate loopback mode; 6-Switch to RX idle,36.5,PASS
+TC085,5,1-Set DTR high; 2-Wait for READY response; 3-Set DTR low; 4-Send 0x7E; 5-Receive ACK 0xAA,32.6,PASS
+TC086,6,1-Expect response 0x0F; 2-Set RTS low; 3-Wait for READY response; 4-Activate loopback mode; 5-Open RS422 channel; 6-Send INIT command,35.7,PASS
+TC087,4,1-Switch to RX idle; 2-Receive ACK 0xAA; 3-Close RS232 port; 4-Set DTR low,23.8,PASS
+TC088,6,1-Receive ACK 0xAA; 2-Check error handler trigger; 3-Send 0x7E; 4-Receive RESPONSE; 5-Close RS232 port; 6-Wait 100ms,34.9,PASS
+TC089,3,1-Transmit payload 0x01 0x02 0x03; 2-Send 0x7E; 3-Send command 0xF0,19.9,PASS
+TC090,6,1-Set RTS high; 2-Send INIT command; 3-Receive RESPONSE; 4-Activate loopback mode; 5-Set DTR low; 6-Send SYNC byte,37.3,FAIL
+TC091,3,1-Initialize RS232 line; 2-Send invalid frame; 3-Check CRC,19.1,FAIL
+TC092,5,1-Open RS422 channel; 2-Send command 0xF0; 3-Send DATA block; 4-Close RS232 port; 5-Set DTR high,30.8,PASS
+TC093,6,1-Open RS422 channel; 2-Send DATA block; 3-Send SYNC byte; 4-Switch to RX idle; 5-Send CONFIG command; 6-Set RTS low,38.6,PASS
+TC094,5,1-Receive ACK 0xAA; 2-Deactivate loopback; 3-Set DTR high; 4-Send SYNC byte; 5-Receive RESPONSE,28.9,PASS
+TC095,4,1-Switch to RX idle; 2-Wait for READY response; 3-Send REQUEST; 4-Switch baud rate to 38400,24.9,PASS
+TC096,3,1-Send DATA block; 2-Wait for READY response; 3-Close RS232 port,19.0,PASS
+TC097,6,1-Receive CRC OK; 2-Transmit handshake byte 0x55; 3-Send DATA block; 4-Configure baud rate to 9600; 5-Check error handler trigger; 6-Activate loopback mode,36.3,PASS
+TC098,3,1-Deactivate loopback; 2-Transmit handshake byte 0x55; 3-Configure baud rate to 19200,16.5,PASS
+TC099,4,1-Deactivate loopback; 2-Receive 0x7E; 3-Send INIT command; 4-Switch to RX idle,23.9,FAIL
+TC100,3,1-Switch baud rate to 38400; 2-Send DATA block; 3-Deactivate loopback,17.5,PASS
+TC101,5,1-Configure baud rate to 9600; 2-Set DTR low; 3-Send 0x7E; 4-Configure baud rate to 19200; 5-Send SYNC byte,28.8,PASS
+TC102,6,1-Configure baud rate to 9600; 2-Initialize RS232 line; 3-Send CONFIG command; 4-Receive ACK 0xAA; 5-Log response time; 6-Activate loopback mode,37.2,PASS
+TC103,6,1-Expect response 0x0F; 2-Send INIT command; 3-Check error handler trigger; 4-Receive 0x7E; 5-Wait for ECHO; 6-Send 0x7E,35.4,FAIL
+TC104,4,1-Configure baud rate to 9600; 2-Set DTR high; 3-Log response time; 4-Send CONFIG command,23.3,FAIL
+TC105,3,1-Check CRC; 2-Transmit handshake byte 0x55; 3-Set DTR low,16.9,PASS
+TC106,3,1-Activate loopback mode; 2-Receive SYNC_ACK; 3-Wait for READY response,20.2,PASS
+TC107,4,1-Receive 0x7E; 2-Open RS422 channel; 3-Switch baud rate to 38400; 4-Set DTR low,26.8,PASS
+TC108,6,1-Activate loopback mode; 2-Set DTR high; 3-Set RTS high; 4-Configure baud rate to 9600; 5-Wait 100ms; 6-Configure baud rate to 19200,35.8,PASS
+TC109,4,1-Check CRC; 2-Set DTR high; 3-Transmit payload 0x01 0x02 0x03; 4-Send command 0xF0,22.8,PASS
+TC110,4,1-Expect response 0x0F; 2-Deactivate loopback; 3-Wait for READY response; 4-Set DTR low,23.6,PASS
+TC111,6,1-Send CONFIG command; 2-Receive RESPONSE; 3-Expect response 0x0F; 4-Initialize RS232 line; 5-Receive ACK 0xAA; 6-Send INIT command,36.8,PASS
+TC112,4,1-Configure baud rate to 19200; 2-Receive CRC OK; 3-Send invalid frame; 4-Configure baud rate to 9600,24.5,PASS
+TC113,4,1-Transmit payload 0x01 0x02 0x03; 2-Activate loopback mode; 3-Set DTR low; 4-Switch baud rate to 38400,27.0,PASS
+TC114,5,1-Send CONFIG command; 2-Receive CRC OK; 3-Configure baud rate to 19200; 4-Open RS232 port; 5-Set DTR high,28.5,FAIL
+TC115,5,1-Open RS422 channel; 2-Expect response 0x0F; 3-Configure baud rate to 19200; 4-Set DTR high; 5-Receive ACK 0xAA,31.7,FAIL
+TC116,4,1-Check response timeout; 2-Switch baud rate to 38400; 3-Open RS422 channel; 4-Close RS232 port,24.6,PASS
+TC117,5,1-Configure baud rate to 9600; 2-Transmit payload 0x01 0x02 0x03; 3-Wait 100ms; 4-Check response timeout; 5-Set RTS low,32.5,FAIL
+TC118,4,1-Send CONFIG command; 2-Transmit handshake byte 0x55; 3-Open RS422 channel; 4-Configure baud rate to 9600,24.5,PASS
+TC119,5,1-Deactivate loopback; 2-Wait for READY response; 3-Send REQUEST; 4-Configure baud rate to 9600; 5-Receive RESPONSE,28.6,FAIL
+TC120,4,1-Deactivate loopback; 2-Configure baud rate to 19200; 3-Check error handler trigger; 4-Set DTR low,22.6,PASS
+TC121,5,1-Activate loopback mode; 2-Set DTR high; 3-Receive 0x7E; 4-Switch to RX idle; 5-Send INIT command,29.6,PASS
+TC122,5,1-Wait 100ms; 2-Configure baud rate to 19200; 3-Open RS422 channel; 4-Log response time; 5-Wait for READY response,30.3,FAIL
+TC123,5,1-Receive ACK 0xAA; 2-Wait 100ms; 3-Send invalid frame; 4-Set RTS high; 5-Send INIT command,32.2,FAIL
+TC124,4,1-Initialize RS232 line; 2-Configure baud rate to 9600; 3-Wait 100ms; 4-Activate loopback mode,25.2,FAIL
+TC125,3,1-Open RS232 port; 2-Log response time; 3-Switch baud rate to 38400,18.2,PASS
+TC126,6,1-Log response time; 2-Switch to RX idle; 3-Set DTR low; 4-Check response timeout; 5-Send REQUEST; 6-Open RS232 port,35.7,PASS
+TC127,4,1-Open RS422 channel; 2-Close RS232 port; 3-Send CONFIG command; 4-Switch to RX idle,23.2,PASS
+TC128,6,1-Set DTR high; 2-Expect response 0x0F; 3-Deactivate loopback; 4-Initialize RS232 line; 5-Check response timeout; 6-Set DTR low,35.6,PASS
+TC129,3,1-Receive RESPONSE; 2-Receive SYNC_ACK; 3-Transmit payload 0x01 0x02 0x03,20.4,PASS
+TC130,3,1-Set RTS high; 2-Send CONFIG command; 3-Set RTS low,17.6,PASS
+TC131,4,1-Wait for READY response; 2-Receive ACK 0xAA; 3-Set RTS high; 4-Receive RESPONSE,26.7,PASS
+TC132,6,1-Send invalid frame; 2-Send SYNC byte; 3-Transmit handshake byte 0x55; 4-Configure baud rate to 19200; 5-Receive CRC OK; 6-Switch baud rate to 38400,35.3,PASS
+TC133,5,1-Wait for ECHO; 2-Wait 100ms; 3-Send DATA block; 4-Send REQUEST; 5-Switch baud rate to 38400,30.9,PASS
+TC134,3,1-Send REQUEST; 2-Send CONFIG command; 3-Send SYNC byte,18.7,PASS
+TC135,4,1-Check CRC; 2-Wait for ECHO; 3-Configure baud rate to 19200; 4-Check response timeout,23.2,PASS
+TC136,3,1-Receive ACK 0xAA; 2-Initialize RS232 line; 3-Switch to RX idle,16.9,FAIL
+TC137,4,1-Check error handler trigger; 2-Set RTS low; 3-Switch to RX idle; 4-Send INIT command,26.0,PASS
+TC138,3,1-Close RS232 port; 2-Check error handler trigger; 3-Receive SYNC_ACK,20.8,PASS
+TC139,6,1-Deactivate loopback; 2-Send DATA block; 3-Transmit handshake byte 0x55; 4-Configure baud rate to 9600; 5-Check CRC; 6-Switch baud rate to 38400,38.9,PASS
+TC140,3,1-Deactivate loopback; 2-Send REQUEST; 3-Activate loopback mode,19.1,PASS
+TC141,5,1-Wait for ECHO; 2-Send 0x7E; 3-Send SYNC byte; 4-Deactivate loopback; 5-Send REQUEST,29.8,PASS
+TC142,5,1-Receive ACK 0xAA; 2-Check response timeout; 3-Initialize RS232 line; 4-Configure baud rate to 9600; 5-Send 0x7E,32.1,PASS
+TC143,3,1-Set RTS low; 2-Check error handler trigger; 3-Send 0x7E,17.5,FAIL
+TC144,3,1-Send REQUEST; 2-Deactivate loopback; 3-Wait 100ms,18.1,PASS
+TC145,3,1-Set RTS high; 2-Open RS422 channel; 3-Receive 0x7E,20.4,PASS
+TC146,6,1-Send 0x7E; 2-Close RS232 port; 3-Send CONFIG command; 4-Expect response 0x0F; 5-Receive SYNC_ACK; 6-Send invalid frame,35.6,PASS
+TC147,5,1-Send DATA block; 2-Set DTR high; 3-Open RS422 channel; 4-Send REQUEST; 5-Send INIT command,31.7,PASS
+TC148,4,1-Wait for READY response; 2-Transmit payload 0x01 0x02 0x03; 3-Check CRC; 4-Send CONFIG command,26.3,PASS
+TC149,5,1-Set DTR low; 2-Send REQUEST; 3-Deactivate loopback; 4-Close RS232 port; 5-Activate loopback mode,31.6,PASS
+TC150,6,1-Initialize RS232 line; 2-Log response time; 3-Send command 0xF0; 4-Close RS232 port; 5-Set RTS high; 6-Send INIT command,37.3,FAIL
+TC151,3,1-Receive 0x7E; 2-Receive SYNC_ACK; 3-Initialize RS232 line,18.5,PASS
+TC152,3,1-Switch baud rate to 38400; 2-Receive CRC OK; 3-Check CRC,18.9,PASS
+TC153,6,1-Set DTR low; 2-Initialize RS232 line; 3-Receive SYNC_ACK; 4-Activate loopback mode; 5-Send REQUEST; 6-Wait for ECHO,35.0,PASS
+TC154,5,1-Activate loopback mode; 2-Send command 0xF0; 3-Set DTR low; 4-Set RTS low; 5-Receive CRC OK,31.7,PASS
+TC155,3,1-Wait 100ms; 2-Send REQUEST; 3-Receive 0x7E,19.5,FAIL
+TC156,4,1-Send SYNC byte; 2-Send 0x7E; 3-Send DATA block; 4-Transmit payload 0x01 0x02 0x03,25.1,FAIL
+TC157,6,1-Send INIT command; 2-Open RS232 port; 3-Set RTS low; 4-Send DATA block; 5-Send REQUEST; 6-Set DTR high,37.7,PASS
+TC158,5,1-Open RS232 port; 2-Send CONFIG command; 3-Set DTR high; 4-Send REQUEST; 5-Wait 100ms,29.3,PASS
+TC159,4,1-Send SYNC byte; 2-Send REQUEST; 3-Check response timeout; 4-Send invalid frame,23.8,FAIL
+TC160,5,1-Check response timeout; 2-Configure baud rate to 9600; 3-Wait for READY response; 4-Open RS422 channel; 5-Send invalid frame,30.0,FAIL
+TC161,6,1-Configure baud rate to 9600; 2-Configure baud rate to 19200; 3-Transmit handshake byte 0x55; 4-Receive ACK 0xAA; 5-Check CRC; 6-Open RS422 channel,37.1,PASS
+TC162,5,1-Transmit handshake byte 0x55; 2-Send CONFIG command; 3-Transmit payload 0x01 0x02 0x03; 4-Receive 0x7E; 5-Activate loopback mode,32.0,PASS
+TC163,3,1-Deactivate loopback; 2-Set DTR low; 3-Activate loopback mode,17.9,PASS
+TC164,5,1-Configure baud rate to 9600; 2-Send CONFIG command; 3-Send INIT command; 4-Close RS232 port; 5-Activate loopback mode,31.1,PASS
+TC165,3,1-Set RTS high; 2-Wait for ECHO; 3-Expect response 0x0F,19.2,PASS
+TC166,5,1-Send REQUEST; 2-Close RS232 port; 3-Check response timeout; 4-Check error handler trigger; 5-Log response time,30.3,PASS
+TC167,4,1-Send CONFIG command; 2-Wait for READY response; 3-Check error handler trigger; 4-Set RTS low,23.1,PASS
+TC168,3,1-Check CRC; 2-Log response time; 3-Set DTR high,20.9,FAIL
+TC169,4,1-Set RTS high; 2-Send DATA block; 3-Wait 100ms; 4-Receive RESPONSE,24.3,PASS
+TC170,5,1-Send command 0xF0; 2-Switch baud rate to 38400; 3-Receive CRC OK; 4-Set DTR high; 5-Wait for READY response,31.5,PASS
+TC171,3,1-Set DTR high; 2-Send command 0xF0; 3-Transmit payload 0x01 0x02 0x03,20.1,FAIL
+TC172,5,1-Check error handler trigger; 2-Send CONFIG command; 3-Send command 0xF0; 4-Open RS422 channel; 5-Set DTR low,32.2,PASS
+TC173,6,1-Configure baud rate to 19200; 2-Wait 100ms; 3-Receive ACK 0xAA; 4-Send DATA block; 5-Set RTS high; 6-Switch to RX idle,36.9,FAIL
+TC174,3,1-Send command 0xF0; 2-Switch baud rate to 38400; 3-Send invalid frame,21.0,PASS
+TC175,5,1-Wait for READY response; 2-Wait for ECHO; 3-Send SYNC byte; 4-Configure baud rate to 19200; 5-Configure baud rate to 9600,32.5,PASS
+TC176,4,1-Wait 100ms; 2-Receive ACK 0xAA; 3-Receive CRC OK; 4-Set DTR high,25.7,PASS
+TC177,5,1-Activate loopback mode; 2-Send REQUEST; 3-Send INIT command; 4-Switch to RX idle; 5-Receive 0x7E,32.5,PASS
+TC178,3,1-Open RS232 port; 2-Activate loopback mode; 3-Send CONFIG command,18.7,PASS
+TC179,5,1-Wait for READY response; 2-Receive ACK 0xAA; 3-Receive RESPONSE; 4-Deactivate loopback; 5-Send 0x7E,29.5,PASS
+TC180,3,1-Send 0x7E; 2-Expect response 0x0F; 3-Configure baud rate to 19200,19.3,PASS
+TC181,3,1-Initialize RS232 line; 2-Send INIT command; 3-Activate loopback mode,17.0,PASS
+TC182,4,1-Check CRC; 2-Open RS422 channel; 3-Send command 0xF0; 4-Open RS232 port,26.5,PASS
+TC183,4,1-Activate loopback mode; 2-Receive 0x7E; 3-Send command 0xF0; 4-Close RS232 port,25.2,PASS
+TC184,4,1-Receive 0x7E; 2-Initialize RS232 line; 3-Send SYNC byte; 4-Switch to RX idle,25.6,PASS
+TC185,4,1-Check CRC; 2-Expect response 0x0F; 3-Receive 0x7E; 4-Check response timeout,25.7,PASS
+TC186,4,1-Transmit payload 0x01 0x02 0x03; 2-Initialize RS232 line; 3-Configure baud rate to 19200; 4-Check CRC,22.8,FAIL
+TC187,4,1-Check response timeout; 2-Send invalid frame; 3-Switch to RX idle; 4-Receive SYNC_ACK,26.8,PASS
+TC188,3,1-Close RS232 port; 2-Send invalid frame; 3-Receive RESPONSE,20.6,PASS
+TC189,3,1-Switch to RX idle; 2-Set RTS high; 3-Transmit handshake byte 0x55,18.3,PASS
+TC190,4,1-Set DTR high; 2-Send INIT command; 3-Receive RESPONSE; 4-Configure baud rate to 9600,26.0,PASS
+TC191,6,1-Check CRC; 2-Send SYNC byte; 3-Send DATA block; 4-Close RS232 port; 5-Send CONFIG command; 6-Set RTS low,34.6,PASS
+TC192,6,1-Open RS232 port; 2-Set DTR high; 3-Expect response 0x0F; 4-Send INIT command; 5-Transmit handshake byte 0x55; 6-Configure baud rate to 19200,36.8,PASS
+TC193,5,1-Set DTR high; 2-Deactivate loopback; 3-Log response time; 4-Send invalid frame; 5-Wait 100ms,32.1,PASS
+TC194,4,1-Receive CRC OK; 2-Receive RESPONSE; 3-Wait 100ms; 4-Switch to RX idle,25.4,PASS
+TC195,6,1-Receive CRC OK; 2-Set DTR high; 3-Receive SYNC_ACK; 4-Wait for READY response; 5-Send invalid frame; 6-Wait for ECHO,36.5,PASS
+TC196,3,1-Deactivate loopback; 2-Wait 100ms; 3-Set RTS high,18.4,PASS
+TC197,5,1-Check CRC; 2-Send CONFIG command; 3-Check response timeout; 4-Initialize RS232 line; 5-Receive SYNC_ACK,30.7,PASS
+TC198,6,1-Receive ACK 0xAA; 2-Receive 0x7E; 3-Send INIT command; 4-Switch baud rate to 38400; 5-Transmit payload 0x01 0x02 0x03; 6-Send invalid frame,38.1,PASS
+TC199,6,1-Set RTS high; 2-Transmit handshake byte 0x55; 3-Open RS422 channel; 4-Wait for READY response; 5-Switch to RX idle; 6-Send INIT command,37.4,PASS
+TC200,6,1-Open RS422 channel; 2-Close RS232 port; 3-Receive 0x7E; 4-Switch to RX idle; 5-Wait for ECHO; 6-Send SYNC byte,35.4,PASS
+TC201,4,1-Wait 100ms; 2-Check response timeout; 3-Set DTR low; 4-Send INIT command,26.6,PASS
+TC202,6,1-Send CONFIG command; 2-Check CRC; 3-Deactivate loopback; 4-Open RS232 port; 5-Close RS232 port; 6-Check response timeout,38.9,PASS
+TC203,5,1-Expect response 0x0F; 2-Activate loopback mode; 3-Deactivate loopback; 4-Send 0x7E; 5-Send INIT command,29.8,PASS
+TC204,4,1-Set DTR high; 2-Set RTS high; 3-Set RTS low; 4-Log response time,26.4,PASS
+TC205,3,1-Send DATA block; 2-Set RTS low; 3-Set DTR low,17.5,PASS
+TC206,4,1-Receive ACK 0xAA; 2-Transmit handshake byte 0x55; 3-Receive SYNC_ACK; 4-Open RS422 channel,23.7,PASS
+TC207,3,1-Send command 0xF0; 2-Send CONFIG command; 3-Send invalid frame,18.6,PASS
+TC208,4,1-Receive SYNC_ACK; 2-Check CRC; 3-Set RTS low; 4-Send INIT command,25.4,PASS
+TC209,6,1-Check CRC; 2-Set RTS high; 3-Activate loopback mode; 4-Send command 0xF0; 5-Wait for READY response; 6-Deactivate loopback,35.2,FAIL
+TC210,3,1-Transmit handshake byte 0x55; 2-Send command 0xF0; 3-Initialize RS232 line,20.8,PASS
+TC211,6,1-Set RTS low; 2-Receive SYNC_ACK; 3-Set RTS high; 4-Log response time; 5-Transmit handshake byte 0x55; 6-Receive ACK 0xAA,38.8,PASS
+TC212,6,1-Set RTS low; 2-Switch baud rate to 38400; 3-Send INIT command; 4-Check response timeout; 5-Wait 100ms; 6-Send CONFIG command,36.4,PASS
+TC213,6,1-Configure baud rate to 19200; 2-Transmit payload 0x01 0x02 0x03; 3-Initialize RS232 line; 4-Check CRC; 5-Receive CRC OK; 6-Log response time,34.6,FAIL
+TC214,6,1-Receive RESPONSE; 2-Send SYNC byte; 3-Send INIT command; 4-Transmit payload 0x01 0x02 0x03; 5-Open RS422 channel; 6-Receive ACK 0xAA,34.7,PASS
+TC215,6,1-Wait for READY response; 2-Send command 0xF0; 3-Configure baud rate to 19200; 4-Send REQUEST; 5-Send DATA block; 6-Receive SYNC_ACK,38.6,PASS
+TC216,6,1-Receive SYNC_ACK; 2-Wait for ECHO; 3-Receive ACK 0xAA; 4-Set DTR high; 5-Check CRC; 6-Transmit handshake byte 0x55,34.6,PASS
+TC217,4,1-Receive ACK 0xAA; 2-Transmit handshake byte 0x55; 3-Wait 100ms; 4-Send REQUEST,26.7,FAIL
+TC218,4,1-Send invalid frame; 2-Log response time; 3-Send 0x7E; 4-Check error handler trigger,25.2,PASS
+TC219,3,1-Switch to RX idle; 2-Open RS422 channel; 3-Wait for READY response,17.2,PASS
+TC220,6,1-Close RS232 port; 2-Receive RESPONSE; 3-Wait for READY response; 4-Receive 0x7E; 5-Send command 0xF0; 6-Send invalid frame,35.8,PASS
+TC221,5,1-Wait 100ms; 2-Receive ACK 0xAA; 3-Set RTS high; 4-Send CONFIG command; 5-Receive RESPONSE,31.1,FAIL
+TC222,3,1-Transmit payload 0x01 0x02 0x03; 2-Deactivate loopback; 3-Receive 0x7E,18.5,PASS
+TC223,5,1-Send REQUEST; 2-Wait 100ms; 3-Close RS232 port; 4-Receive RESPONSE; 5-Receive SYNC_ACK,29.2,FAIL
+TC224,6,1-Configure baud rate to 19200; 2-Set RTS high; 3-Send invalid frame; 4-Set DTR high; 5-Transmit payload 0x01 0x02 0x03; 6-Set RTS low,38.4,PASS
+TC225,6,1-Transmit handshake byte 0x55; 2-Check CRC; 3-Close RS232 port; 4-Send SYNC byte; 5-Send CONFIG command; 6-Send invalid frame,37.9,PASS
+TC226,4,1-Receive 0x7E; 2-Receive ACK 0xAA; 3-Configure baud rate to 9600; 4-Transmit handshake byte 0x55,23.5,PASS
+TC227,3,1-Check error handler trigger; 2-Receive RESPONSE; 3-Set RTS high,18.9,PASS
+TC228,5,1-Activate loopback mode; 2-Send SYNC byte; 3-Configure baud rate to 9600; 4-Send command 0xF0; 5-Send INIT command,29.9,PASS
+TC229,4,1-Receive CRC OK; 2-Open RS422 channel; 3-Configure baud rate to 9600; 4-Check response timeout,25.8,FAIL
+TC230,3,1-Send INIT command; 2-Set RTS low; 3-Wait 100ms,17.9,PASS
+TC231,3,1-Initialize RS232 line; 2-Receive SYNC_ACK; 3-Send invalid frame,17.6,FAIL
+TC232,3,1-Check error handler trigger; 2-Check response timeout; 3-Activate loopback mode,18.4,FAIL
+TC233,5,1-Send DATA block; 2-Receive 0x7E; 3-Set RTS low; 4-Check CRC; 5-Initialize RS232 line,29.8,PASS
+TC234,3,1-Wait 100ms; 2-Wait for ECHO; 3-Receive 0x7E,20.3,PASS
+TC235,6,1-Receive ACK 0xAA; 2-Set DTR high; 3-Switch to RX idle; 4-Send 0x7E; 5-Send invalid frame; 6-Set DTR low,38.1,PASS
+TC236,4,1-Wait for READY response; 2-Wait 100ms; 3-Transmit handshake byte 0x55; 4-Set DTR high,22.8,PASS
+TC237,6,1-Expect response 0x0F; 2-Wait 100ms; 3-Send INIT command; 4-Wait for READY response; 5-Log response time; 6-Check response timeout,37.3,PASS
+TC238,5,1-Configure baud rate to 9600; 2-Wait for READY response; 3-Send DATA block; 4-Check response timeout; 5-Check error handler trigger,32.5,PASS
+TC239,6,1-Deactivate loopback; 2-Switch baud rate to 38400; 3-Send REQUEST; 4-Receive 0x7E; 5-Send 0x7E; 6-Send SYNC byte,34.8,PASS
+TC240,5,1-Wait 100ms; 2-Send DATA block; 3-Send command 0xF0; 4-Close RS232 port; 5-Open RS422 channel,30.1,PASS
+TC241,4,1-Set RTS high; 2-Set DTR high; 3-Send CONFIG command; 4-Send invalid frame,25.4,FAIL
+TC242,3,1-Log response time; 2-Check error handler trigger; 3-Configure baud rate to 9600,18.4,PASS
+TC243,5,1-Receive CRC OK; 2-Send REQUEST; 3-Check CRC; 4-Transmit payload 0x01 0x02 0x03; 5-Receive ACK 0xAA,32.1,FAIL
+TC244,4,1-Send INIT command; 2-Open RS232 port; 3-Configure baud rate to 9600; 4-Send DATA block,24.5,PASS
+TC245,4,1-Send SYNC byte; 2-Send DATA block; 3-Send CONFIG command; 4-Switch baud rate to 38400,26.7,FAIL
+TC246,4,1-Wait for READY response; 2-Send REQUEST; 3-Set RTS high; 4-Check error handler trigger,26.3,PASS
+TC247,4,1-Open RS422 channel; 2-Switch baud rate to 38400; 3-Set DTR low; 4-Transmit handshake byte 0x55,26.6,FAIL
+TC248,5,1-Configure baud rate to 9600; 2-Deactivate loopback; 3-Expect response 0x0F; 4-Send 0x7E; 5-Receive 0x7E,29.9,PASS
+TC249,6,1-Close RS232 port; 2-Set RTS low; 3-Configure baud rate to 19200; 4-Configure baud rate to 9600; 5-Switch baud rate to 38400; 6-Send REQUEST,38.2,PASS
+TC250,3,1-Set DTR high; 2-Configure baud rate to 9600; 3-Expect response 0x0F,19.7,PASS
+TC251,3,1-Wait 100ms; 2-Transmit payload 0x01 0x02 0x03; 3-Transmit handshake byte 0x55,18.9,PASS
+TC252,6,1-Set RTS low; 2-Transmit handshake byte 0x55; 3-Switch baud rate to 38400; 4-Initialize RS232 line; 5-Set DTR high; 6-Configure baud rate to 19200,38.3,FAIL
+TC253,3,1-Configure baud rate to 9600; 2-Activate loopback mode; 3-Log response time,17.8,PASS
+TC254,3,1-Check error handler trigger; 2-Send CONFIG command; 3-Receive SYNC_ACK,18.3,PASS
+TC255,4,1-Receive 0x7E; 2-Transmit payload 0x01 0x02 0x03; 3-Wait 100ms; 4-Open RS422 channel,22.9,PASS
+TC256,4,1-Switch to RX idle; 2-Check error handler trigger; 3-Send command 0xF0; 4-Wait 100ms,22.8,PASS
+TC257,5,1-Set RTS low; 2-Expect response 0x0F; 3-Transmit payload 0x01 0x02 0x03; 4-Set DTR low; 5-Check error handler trigger,31.2,PASS
+TC258,4,1-Send REQUEST; 2-Set DTR high; 3-Send INIT command; 4-Open RS422 channel,24.5,PASS
+TC259,6,1-Transmit handshake byte 0x55; 2-Close RS232 port; 3-Send REQUEST; 4-Receive SYNC_ACK; 5-Receive 0x7E; 6-Check error handler trigger,38.2,PASS
+TC260,4,1-Configure baud rate to 19200; 2-Receive CRC OK; 3-Receive SYNC_ACK; 4-Switch to RX idle,23.3,PASS
+TC261,3,1-Activate loopback mode; 2-Receive CRC OK; 3-Wait for ECHO,17.7,FAIL
+TC262,3,1-Transmit payload 0x01 0x02 0x03; 2-Send DATA block; 3-Send SYNC byte,17.5,PASS
+TC263,3,1-Receive 0x7E; 2-Send REQUEST; 3-Wait for ECHO,19.9,PASS
+TC264,3,1-Expect response 0x0F; 2-Send DATA block; 3-Set RTS low,17.1,PASS
+TC265,6,1-Expect response 0x0F; 2-Set DTR high; 3-Send CONFIG command; 4-Open RS422 channel; 5-Receive CRC OK; 6-Check error handler trigger,36.6,FAIL
+TC266,3,1-Log response time; 2-Open RS422 channel; 3-Expect response 0x0F,18.2,FAIL
+TC267,6,1-Set DTR high; 2-Open RS422 channel; 3-Check response timeout; 4-Configure baud rate to 19200; 5-Check error handler trigger; 6-Receive RESPONSE,36.5,PASS
+TC268,3,1-Send INIT command; 2-Log response time; 3-Receive CRC OK,17.2,PASS
+TC269,4,1-Switch baud rate to 38400; 2-Wait 100ms; 3-Receive SYNC_ACK; 4-Send invalid frame,23.0,PASS
+TC270,6,1-Set RTS low; 2-Log response time; 3-Open RS422 channel; 4-Send invalid frame; 5-Set DTR low; 6-Send CONFIG command,35.7,PASS
+TC271,5,1-Receive CRC OK; 2-Wait 100ms; 3-Set DTR high; 4-Receive 0x7E; 5-Open RS232 port,29.5,PASS
+TC272,5,1-Open RS422 channel; 2-Receive RESPONSE; 3-Initialize RS232 line; 4-Send CONFIG command; 5-Receive SYNC_ACK,30.9,FAIL
+TC273,6,1-Receive SYNC_ACK; 2-Check error handler trigger; 3-Transmit payload 0x01 0x02 0x03; 4-Send CONFIG command; 5-Configure baud rate to 9600; 6-Receive ACK 0xAA,36.9,PASS
+TC274,4,1-Set RTS high; 2-Transmit handshake byte 0x55; 3-Wait 100ms; 4-Send DATA block,24.6,PASS
+TC275,5,1-Close RS232 port; 2-Send SYNC byte; 3-Receive ACK 0xAA; 4-Send DATA block; 5-Send INIT command,29.4,PASS
+TC276,4,1-Send DATA block; 2-Receive SYNC_ACK; 3-Set DTR high; 4-Switch baud rate to 38400,23.6,FAIL
+TC277,6,1-Set DTR low; 2-Wait 100ms; 3-Send INIT command; 4-Open RS232 port; 5-Transmit payload 0x01 0x02 0x03; 6-Wait for ECHO,36.5,PASS
+TC278,3,1-Receive SYNC_ACK; 2-Expect response 0x0F; 3-Log response time,17.6,PASS
+TC279,5,1-Close RS232 port; 2-Activate loopback mode; 3-Log response time; 4-Send REQUEST; 5-Receive CRC OK,32.7,PASS
+TC280,6,1-Check response timeout; 2-Log response time; 3-Check CRC; 4-Receive SYNC_ACK; 5-Switch to RX idle; 6-Activate loopback mode,35.8,PASS
+TC281,3,1-Wait for ECHO; 2-Expect response 0x0F; 3-Log response time,19.4,FAIL
+TC282,6,1-Set RTS low; 2-Send invalid frame; 3-Send command 0xF0; 4-Close RS232 port; 5-Send CONFIG command; 6-Send DATA block,38.9,PASS
+TC283,6,1-Switch to RX idle; 2-Set DTR high; 3-Receive RESPONSE; 4-Wait for READY response; 5-Send CONFIG command; 6-Send invalid frame,38.2,PASS
+TC284,6,1-Check response timeout; 2-Wait 100ms; 3-Expect response 0x0F; 4-Open RS232 port; 5-Send REQUEST; 6-Receive SYNC_ACK,36.8,PASS
+TC285,4,1-Open RS232 port; 2-Switch to RX idle; 3-Set RTS low; 4-Receive 0x7E,25.8,PASS
+TC286,3,1-Receive CRC OK; 2-Set RTS low; 3-Switch to RX idle,19.6,PASS
+TC287,5,1-Set DTR low; 2-Transmit handshake byte 0x55; 3-Transmit payload 0x01 0x02 0x03; 4-Wait for READY response; 5-Open RS422 channel,30.6,PASS
+TC288,4,1-Wait for ECHO; 2-Send 0x7E; 3-Send REQUEST; 4-Configure baud rate to 19200,23.1,FAIL
+TC289,6,1-Open RS232 port; 2-Receive CRC OK; 3-Receive 0x7E; 4-Open RS422 channel; 5-Send REQUEST; 6-Configure baud rate to 9600,38.5,PASS
+TC290,6,1-Send DATA block; 2-Receive CRC OK; 3-Send command 0xF0; 4-Switch to RX idle; 5-Set DTR high; 6-Close RS232 port,36.4,FAIL
+TC291,4,1-Deactivate loopback; 2-Set DTR low; 3-Send CONFIG command; 4-Receive SYNC_ACK,25.3,PASS
+TC292,6,1-Open RS422 channel; 2-Send SYNC byte; 3-Set DTR low; 4-Open RS232 port; 5-Send REQUEST; 6-Activate loopback mode,37.8,FAIL
+TC293,5,1-Check CRC; 2-Configure baud rate to 19200; 3-Expect response 0x0F; 4-Receive CRC OK; 5-Configure baud rate to 9600,32.0,PASS
+TC294,4,1-Send invalid frame; 2-Transmit payload 0x01 0x02 0x03; 3-Open RS422 channel; 4-Receive 0x7E,22.6,PASS
+TC295,4,1-Check CRC; 2-Receive ACK 0xAA; 3-Set DTR low; 4-Switch to RX idle,24.6,PASS
+TC296,3,1-Switch to RX idle; 2-Set DTR high; 3-Receive 0x7E,17.2,PASS
+TC297,3,1-Open RS422 channel; 2-Check response timeout; 3-Wait for ECHO,19.5,FAIL
+TC298,3,1-Close RS232 port; 2-Open RS232 port; 3-Receive SYNC_ACK,20.3,PASS
+TC299,4,1-Log response time; 2-Set DTR high; 3-Switch baud rate to 38400; 4-Initialize RS232 line,25.1,PASS
+TC300,3,1-Deactivate loopback; 2-Receive CRC OK; 3-Switch to RX idle,17.7,PASS
+TC301,5,1-Initialize RS232 line; 2-Check CRC; 3-Close RS232 port; 4-Open RS232 port; 5-Check response timeout,32.1,PASS
+TC302,6,1-Receive CRC OK; 2-Activate loopback mode; 3-Transmit payload 0x01 0x02 0x03; 4-Check CRC; 5-Send INIT command; 6-Open RS422 channel,36.4,PASS
+TC303,6,1-Send 0x7E; 2-Receive 0x7E; 3-Open RS422 channel; 4-Send invalid frame; 5-Transmit payload 0x01 0x02 0x03; 6-Set RTS high,36.3,FAIL
+TC304,5,1-Check CRC; 2-Send command 0xF0; 3-Switch to RX idle; 4-Receive RESPONSE; 5-Initialize RS232 line,31.3,PASS
+TC305,6,1-Close RS232 port; 2-Send INIT command; 3-Deactivate loopback; 4-Receive RESPONSE; 5-Check error handler trigger; 6-Wait for READY response,35.8,PASS
+TC306,3,1-Send REQUEST; 2-Open RS232 port; 3-Transmit payload 0x01 0x02 0x03,19.8,PASS
+TC307,5,1-Receive SYNC_ACK; 2-Send INIT command; 3-Set RTS low; 4-Close RS232 port; 5-Open RS422 channel,32.0,FAIL
+TC308,3,1-Check CRC; 2-Receive CRC OK; 3-Configure baud rate to 9600,20.5,PASS
+TC309,3,1-Check error handler trigger; 2-Set DTR high; 3-Transmit payload 0x01 0x02 0x03,18.2,PASS
+TC310,3,1-Transmit handshake byte 0x55; 2-Check error handler trigger; 3-Send DATA block,19.4,PASS
+TC311,6,1-Send DATA block; 2-Switch baud rate to 38400; 3-Wait 100ms; 4-Send INIT command; 5-Send SYNC byte; 6-Configure baud rate to 9600,35.6,PASS
+TC312,6,1-Receive SYNC_ACK; 2-Open RS422 channel; 3-Send INIT command; 4-Check response timeout; 5-Log response time; 6-Wait 100ms,37.4,PASS
+TC313,3,1-Send 0x7E; 2-Transmit payload 0x01 0x02 0x03; 3-Expect response 0x0F,18.7,PASS
+TC314,6,1-Wait 100ms; 2-Send CONFIG command; 3-Log response time; 4-Send invalid frame; 5-Send 0x7E; 6-Switch to RX idle,38.5,PASS
+TC315,4,1-Activate loopback mode; 2-Switch to RX idle; 3-Configure baud rate to 9600; 4-Send SYNC byte,24.0,PASS
+TC316,3,1-Check error handler trigger; 2-Expect response 0x0F; 3-Send INIT command,17.1,PASS
+TC317,4,1-Set RTS high; 2-Log response time; 3-Deactivate loopback; 4-Set RTS low,23.7,PASS
+TC318,3,1-Receive 0x7E; 2-Set RTS low; 3-Send invalid frame,16.7,PASS
+TC319,3,1-Check response timeout; 2-Receive 0x7E; 3-Send REQUEST,19.9,PASS
+TC320,5,1-Send 0x7E; 2-Send REQUEST; 3-Close RS232 port; 4-Wait for ECHO; 5-Send command 0xF0,28.6,FAIL
+TC321,5,1-Transmit payload 0x01 0x02 0x03; 2-Receive SYNC_ACK; 3-Wait for ECHO; 4-Send 0x7E; 5-Send SYNC byte,29.5,PASS
+TC322,6,1-Check error handler trigger; 2-Configure baud rate to 9600; 3-Check response timeout; 4-Log response time; 5-Transmit handshake byte 0x55; 6-Wait for READY response,37.9,PASS
+TC323,4,1-Open RS422 channel; 2-Switch baud rate to 38400; 3-Set DTR low; 4-Close RS232 port,24.0,FAIL
+TC324,3,1-Send invalid frame; 2-Open RS422 channel; 3-Set DTR high,20.4,FAIL
+TC325,3,1-Log response time; 2-Send INIT command; 3-Send DATA block,19.1,FAIL
+TC326,6,1-Send INIT command; 2-Receive ACK 0xAA; 3-Send REQUEST; 4-Transmit handshake byte 0x55; 5-Check CRC; 6-Set DTR high,37.5,FAIL
+TC327,6,1-Activate loopback mode; 2-Open RS422 channel; 3-Transmit payload 0x01 0x02 0x03; 4-Switch baud rate to 38400; 5-Send REQUEST; 6-Wait 100ms,38.4,PASS
+TC328,3,1-Receive 0x7E; 2-Set DTR low; 3-Configure baud rate to 9600,16.8,PASS
+TC329,4,1-Send command 0xF0; 2-Wait 100ms; 3-Send CONFIG command; 4-Receive 0x7E,26.3,PASS
+TC330,4,1-Receive 0x7E; 2-Expect response 0x0F; 3-Set RTS high; 4-Wait for READY response,22.6,PASS
+TC331,3,1-Receive RESPONSE; 2-Log response time; 3-Transmit payload 0x01 0x02 0x03,17.8,PASS
+TC332,5,1-Close RS232 port; 2-Send INIT command; 3-Send DATA block; 4-Set RTS low; 5-Send SYNC byte,29.0,FAIL
+TC333,5,1-Switch to RX idle; 2-Send command 0xF0; 3-Send INIT command; 4-Transmit payload 0x01 0x02 0x03; 5-Send 0x7E,28.9,PASS
+TC334,6,1-Log response time; 2-Initialize RS232 line; 3-Set DTR low; 4-Send DATA block; 5-Switch to RX idle; 6-Configure baud rate to 9600,36.8,PASS
+TC335,5,1-Configure baud rate to 9600; 2-Receive 0x7E; 3-Switch to RX idle; 4-Configure baud rate to 19200; 5-Wait for ECHO,30.6,PASS
+TC336,4,1-Send command 0xF0; 2-Set RTS high; 3-Set DTR low; 4-Wait for ECHO,22.9,PASS
+TC337,5,1-Wait for READY response; 2-Switch baud rate to 38400; 3-Initialize RS232 line; 4-Send CONFIG command; 5-Send SYNC byte,28.5,FAIL
+TC338,5,1-Receive 0x7E; 2-Open RS422 channel; 3-Receive SYNC_ACK; 4-Send 0x7E; 5-Receive RESPONSE,30.2,PASS
+TC339,6,1-Receive CRC OK; 2-Wait 100ms; 3-Send SYNC byte; 4-Set RTS high; 5-Initialize RS232 line; 6-Check response timeout,36.4,PASS
+TC340,6,1-Wait 100ms; 2-Set RTS high; 3-Activate loopback mode; 4-Open RS422 channel; 5-Receive RESPONSE; 6-Switch baud rate to 38400,38.7,FAIL
+TC341,3,1-Expect response 0x0F; 2-Receive RESPONSE; 3-Configure baud rate to 19200,20.5,PASS
+TC342,6,1-Send REQUEST; 2-Send SYNC byte; 3-Send invalid frame; 4-Check error handler trigger; 5-Set DTR low; 6-Open RS422 channel,37.2,PASS
+TC343,5,1-Open RS422 channel; 2-Check response timeout; 3-Receive RESPONSE; 4-Set DTR low; 5-Send REQUEST,31.3,PASS
+TC344,4,1-Configure baud rate to 9600; 2-Receive RESPONSE; 3-Send REQUEST; 4-Set RTS low,24.9,PASS
+TC345,5,1-Open RS232 port; 2-Set DTR low; 3-Send INIT command; 4-Set RTS low; 5-Send DATA block,29.8,PASS
+TC346,4,1-Expect response 0x0F; 2-Send invalid frame; 3-Send REQUEST; 4-Configure baud rate to 19200,24.1,PASS
+TC347,4,1-Send 0x7E; 2-Transmit payload 0x01 0x02 0x03; 3-Transmit handshake byte 0x55; 4-Activate loopback mode,24.3,PASS
+TC348,6,1-Set RTS high; 2-Send INIT command; 3-Receive RESPONSE; 4-Switch to RX idle; 5-Expect response 0x0F; 6-Set DTR high,38.2,FAIL
+TC349,4,1-Send invalid frame; 2-Deactivate loopback; 3-Send CONFIG command; 4-Wait for ECHO,25.1,PASS
+TC350,6,1-Receive CRC OK; 2-Initialize RS232 line; 3-Receive RESPONSE; 4-Send INIT command; 5-Configure baud rate to 9600; 6-Receive 0x7E,38.3,PASS
+TC351,6,1-Set RTS low; 2-Configure baud rate to 9600; 3-Deactivate loopback; 4-Receive ACK 0xAA; 5-Transmit handshake byte 0x55; 6-Send 0x7E,37.7,PASS
+TC352,4,1-Receive SYNC_ACK; 2-Check CRC; 3-Wait for READY response; 4-Send REQUEST,23.0,PASS
+TC353,4,1-Send CONFIG command; 2-Activate loopback mode; 3-Configure baud rate to 19200; 4-Set DTR high,23.0,PASS
+TC354,4,1-Set RTS low; 2-Log response time; 3-Receive ACK 0xAA; 4-Wait for ECHO,23.5,PASS
+TC355,3,1-Close RS232 port; 2-Wait for ECHO; 3-Open RS232 port,18.4,FAIL
+TC356,4,1-Transmit payload 0x01 0x02 0x03; 2-Send 0x7E; 3-Send SYNC byte; 4-Transmit handshake byte 0x55,26.0,FAIL
+TC357,5,1-Receive CRC OK; 2-Receive 0x7E; 3-Configure baud rate to 9600; 4-Set DTR low; 5-Wait 100ms,31.2,PASS
+TC358,5,1-Send SYNC byte; 2-Open RS232 port; 3-Receive RESPONSE; 4-Wait for READY response; 5-Receive CRC OK,31.7,FAIL
+TC359,5,1-Wait for ECHO; 2-Expect response 0x0F; 3-Activate loopback mode; 4-Open RS422 channel; 5-Send invalid frame,30.9,PASS
+TC360,5,1-Receive RESPONSE; 2-Open RS232 port; 3-Send SYNC byte; 4-Send invalid frame; 5-Expect response 0x0F,29.3,PASS
+TC361,4,1-Send INIT command; 2-Receive RESPONSE; 3-Receive ACK 0xAA; 4-Initialize RS232 line,24.2,FAIL
+TC362,6,1-Switch to RX idle; 2-Transmit payload 0x01 0x02 0x03; 3-Transmit handshake byte 0x55; 4-Send CONFIG command; 5-Receive CRC OK; 6-Open RS232 port,35.5,PASS
+TC363,5,1-Transmit payload 0x01 0x02 0x03; 2-Wait for READY response; 3-Close RS232 port; 4-Send command 0xF0; 5-Wait for ECHO,28.6,PASS
+TC364,4,1-Send invalid frame; 2-Initialize RS232 line; 3-Activate loopback mode; 4-Send 0x7E,23.1,PASS
+TC365,3,1-Send 0x7E; 2-Receive CRC OK; 3-Expect response 0x0F,20.0,PASS
+TC366,4,1-Transmit handshake byte 0x55; 2-Send SYNC byte; 3-Send REQUEST; 4-Check response timeout,25.4,PASS
+TC367,3,1-Send CONFIG command; 2-Send INIT command; 3-Set DTR high,20.5,PASS
+TC368,6,1-Set DTR low; 2-Activate loopback mode; 3-Check CRC; 4-Transmit handshake byte 0x55; 5-Set DTR high; 6-Send invalid frame,36.2,FAIL
+TC369,6,1-Wait for READY response; 2-Close RS232 port; 3-Set DTR high; 4-Transmit handshake byte 0x55; 5-Configure baud rate to 9600; 6-Send REQUEST,37.9,FAIL
+TC370,4,1-Send invalid frame; 2-Configure baud rate to 19200; 3-Open RS232 port; 4-Set DTR high,23.9,FAIL
+TC371,3,1-Receive SYNC_ACK; 2-Check error handler trigger; 3-Set DTR low,20.7,PASS
+TC372,4,1-Wait 100ms; 2-Send DATA block; 3-Receive 0x7E; 4-Receive RESPONSE,26.6,PASS
+TC373,6,1-Expect response 0x0F; 2-Set DTR high; 3-Send SYNC byte; 4-Check error handler trigger; 5-Open RS232 port; 6-Set DTR low,34.7,PASS
+TC374,4,1-Check error handler trigger; 2-Wait for READY response; 3-Send invalid frame; 4-Send CONFIG command,23.8,PASS
+TC375,5,1-Send DATA block; 2-Open RS422 channel; 3-Wait for READY response; 4-Initialize RS232 line; 5-Receive RESPONSE,31.9,PASS
+TC376,4,1-Receive RESPONSE; 2-Send invalid frame; 3-Send DATA block; 4-Switch to RX idle,26.7,PASS
+TC377,4,1-Check CRC; 2-Send command 0xF0; 3-Send INIT command; 4-Receive ACK 0xAA,24.1,PASS
+TC378,6,1-Send REQUEST; 2-Wait 100ms; 3-Send CONFIG command; 4-Check CRC; 5-Receive 0x7E; 6-Check response timeout,35.9,PASS
+TC379,5,1-Receive ACK 0xAA; 2-Configure baud rate to 9600; 3-Transmit payload 0x01 0x02 0x03; 4-Set RTS low; 5-Open RS422 channel,31.1,PASS
+TC380,3,1-Check error handler trigger; 2-Send command 0xF0; 3-Initialize RS232 line,16.6,FAIL
+TC381,3,1-Check CRC; 2-Receive 0x7E; 3-Send REQUEST,19.1,PASS
+TC382,3,1-Receive ACK 0xAA; 2-Send command 0xF0; 3-Transmit payload 0x01 0x02 0x03,16.5,FAIL
+TC383,6,1-Receive 0x7E; 2-Wait for READY response; 3-Send SYNC byte; 4-Check CRC; 5-Send REQUEST; 6-Transmit payload 0x01 0x02 0x03,38.5,PASS
+TC384,5,1-Switch baud rate to 38400; 2-Send command 0xF0; 3-Open RS232 port; 4-Set DTR high; 5-Transmit handshake byte 0x55,28.8,PASS
+TC385,5,1-Check error handler trigger; 2-Set DTR low; 3-Log response time; 4-Activate loopback mode; 5-Configure baud rate to 19200,29.9,PASS
+TC386,5,1-Initialize RS232 line; 2-Set DTR high; 3-Expect response 0x0F; 4-Configure baud rate to 9600; 5-Receive CRC OK,30.5,PASS
+TC387,4,1-Wait for READY response; 2-Open RS422 channel; 3-Send command 0xF0; 4-Receive SYNC_ACK,26.8,PASS
+TC388,3,1-Set DTR high; 2-Activate loopback mode; 3-Set RTS low,17.5,PASS
+TC389,3,1-Check error handler trigger; 2-Set DTR low; 3-Receive SYNC_ACK,18.3,PASS
+TC390,6,1-Expect response 0x0F; 2-Configure baud rate to 19200; 3-Receive SYNC_ACK; 4-Close RS232 port; 5-Open RS232 port; 6-Switch baud rate to 38400,36.8,PASS
+TC391,3,1-Expect response 0x0F; 2-Check error handler trigger; 3-Wait 100ms,17.9,FAIL
+TC392,5,1-Send SYNC byte; 2-Configure baud rate to 9600; 3-Initialize RS232 line; 4-Send DATA block; 5-Receive ACK 0xAA,30.9,PASS
+TC393,4,1-Open RS422 channel; 2-Check response timeout; 3-Send invalid frame; 4-Activate loopback mode,26.5,PASS
+TC394,5,1-Send command 0xF0; 2-Receive CRC OK; 3-Send invalid frame; 4-Send INIT command; 5-Receive ACK 0xAA,31.3,PASS
+TC395,4,1-Receive ACK 0xAA; 2-Receive SYNC_ACK; 3-Send REQUEST; 4-Wait for READY response,23.9,PASS
+TC396,5,1-Receive SYNC_ACK; 2-Send CONFIG command; 3-Log response time; 4-Wait for READY response; 5-Open RS232 port,28.7,PASS
+TC397,5,1-Send SYNC byte; 2-Switch baud rate to 38400; 3-Send INIT command; 4-Check CRC; 5-Check error handler trigger,32.6,FAIL
+TC398,3,1-Configure baud rate to 19200; 2-Check error handler trigger; 3-Wait 100ms,18.2,PASS
+TC399,6,1-Switch baud rate to 38400; 2-Set RTS high; 3-Set DTR low; 4-Configure baud rate to 19200; 5-Receive RESPONSE; 6-Switch to RX idle,35.8,PASS
+TC400,6,1-Receive ACK 0xAA; 2-Expect response 0x0F; 3-Send invalid frame; 4-Send command 0xF0; 5-Set RTS low; 6-Switch baud rate to 38400,37.6,PASS
