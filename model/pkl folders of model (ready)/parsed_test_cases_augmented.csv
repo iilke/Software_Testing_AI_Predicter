@@ -1,8 +1,8 @@
 test_id,num_steps,step_keywords,duration,result
-TestCase001_LBConfiguration,4,Set ARM Switch is ON Send LB CONF Message Set ARM Switch is OFF Send LB CONF Message,19.319,PASS
-TestCase002_IBITBaslatma,4,Set ARM Switch is Send Start IBIT Message Set ARM Switch is OFF Send Start IBIT Message,18.956,PASS
-TestCase003_SYYDurumBilgileri,6,Set ARM Switch is ON Send SYY State Message Set ARM Switch is OFF Send SYY State Message Send Start IBIT Message Send SYY State Message,31.783,PASS
-TestCase010_LB_OperatingMode_FaultyStatus,7,"Turn LB Power ON or RESET Set ARM Switch is OFF Send LB Konfigürasyon Mesajı2025-06-16 14:43:26,003:DEBUG : UTS : MessageOperations::trasmit_message: Set ARM Switch is ON Send TEC Sıcaklık Limit Değeri Üst Limit 2 Derece Send Start IBIT Message Send TEC Sıcaklık Limit Değeri",18.27,FAIL
+TestCase001_LBConfiguration,4, 1-Set ARM Switch is ON; 2-Send LB CONF Message; 3-Set ARM Switch is OFF; 4-Send LB CONF Message,19.319,PASS
+TestCase002_IBITBaslatma,4, 1-Set ARM Switch is Send; 2-Start IBIT Message; 3-Set ARM Switch is OFF; 4-Send Start IBIT Message,18.956,PASS
+TestCase003_SYYDurumBilgileri, 6, 1-Set ARM Switch is ON; 2-Send SYY State Message; 3-Set ARM Switch is OFF; 4-Send SYY State Message; 5-Send Start IBIT Message; 6-Send SYY State Message,31.783,PASS
+TestCase010_LB_OperatingMode_FaultyStatus,7, 1-Turn LB Power ON or RESET; 2-Set ARM Switch is OFF; 3-Send LB Konfigürasyon Mesajı; 4-Set ARM Switch is ON; 5-Send TEC Sıcaklık Limit Değeri Üst Limit 2 Derece; 6-Send Start IBIT Message; 7-Send TEC Sıcaklık Limit Değeri,18.27,FAIL
 TC001,6,1-Receive 0x7E; 2-Check error handler trigger; 3-Send DATA block; 4-Wait for READY response; 5-Receive ACK 0xAA; 6-Transmit payload 0x01 0x02 0x03,37.6,PASS
 TC002,4,1-Open RS422 channel; 2-Wait for ECHO; 3-Send 0x7E; 4-Receive RESPONSE,24.4,FAIL
 TC003,6,1-Wait 100ms; 2-Receive RESPONSE; 3-Expect response 0x0F; 4-Send INIT command; 5-Send DATA block; 6-Wait for READY response,35.0,FAIL
