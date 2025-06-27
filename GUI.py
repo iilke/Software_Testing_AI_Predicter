@@ -3,6 +3,7 @@ from tkinter import ttk
 import re
 import pickle
 import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
 
 
 # Load pre-trained ML models and preprocessors
@@ -18,6 +19,16 @@ with open("tfidf.pkl", "rb") as f:
 with open("scaler.pkl", "rb") as f:
     scaler = pickle.load(f)
 
+with open("X_features.pkl", "rb") as f:
+    X_features = pickle.load(f)
+
+with open("test_ids.pkl", "rb") as f:
+    test_ids = pickle.load(f)
+
+with open("similar_case_details.pkl", "rb") as f:
+    similar_case_details = pickle.load(f)  # { test_id: {steps, duration, result} }
+
+
 
 # Create main window
 root = tk.Tk()
@@ -25,9 +36,15 @@ root.title("AI Test Case Predictor")
 root.geometry("700x500")
 root.configure(bg="white")
 
-def show_result_page(test_input):
 
+def show_result_page(test_input):
     root.configure(bg="white")
+
+    # === ML Prediction Results ===
+    results = parse_and_predict(test_input)
+    if not results:
+        print("Prediction failed.")
+        return
 
     # === Top Frame for Return Button ===
     top_frame = tk.Frame(root, bg="white")
@@ -44,11 +61,9 @@ def show_result_page(test_input):
     title_label = tk.Label(root, text="Prediction Results\n", font=("Arial", 20, "bold"), bg="white")
     title_label.grid(row=0, column=1, pady=(30, 20), sticky="n")
 
-    # === Main content frame (contains left and right columns) ===
+    # === Main content frame ===
     content_frame = tk.Frame(root, bg="white")
     content_frame.grid(row=1, column=1, padx=20, sticky="n")
-    
-
 
     # Make columns expandable
     root.grid_columnconfigure(0, weight=1)
@@ -59,56 +74,23 @@ def show_result_page(test_input):
     left_column = tk.Frame(content_frame, bg="white")
     left_column.grid(row=0, column=0, sticky="nw")
 
-    # User-entered test case
-    
-    # === Test Case Breakdown ======================================================
-    # Parse the input into parts
+    # === Parse test input ===
     try:
         parts = test_input.strip().split(",", 2)
         tcid = parts[0].strip()
         steps_raw = parts[2].strip()
-        step_lines = steps_raw.split(";")
-        step_lines = [s.strip() for s in step_lines if s.strip()]
+        step_lines = [s.strip() for s in steps_raw.split(";") if s.strip()]
     except:
         tcid = "Unknown"
         step_lines = ["Parsing error"]
 
-    # Title
-    header_label = tk.Label(
-        left_column,
-        text="Test Case:",
-        font=main_font,
-        bg="white",
-        anchor="w",
-        justify="left"
-    )
-    header_label.grid(row=0, column=0, sticky="w", pady=(15, 5))
+    # === Test Case Breakdown ===
+    tk.Label(left_column, text="Test Case:", font=main_font, bg="white").grid(row=0, column=0, sticky="w", pady=(15, 5))
+    tk.Label(left_column, text=f"TCID: {tcid}", font=text_font, bg="white").grid(row=1, column=0, sticky="w", pady=(0, 10))
+    tk.Label(left_column, text="Step Descriptions:", font=text_font, bg="white").grid(row=2, column=0, sticky="w")
 
-    # TCID
-    tcid_label = tk.Label(
-        left_column,
-        text=f"TCID:  {tcid}",
-        font=text_font,
-        bg="white",
-        anchor="w",
-        justify="left"
-    )
-    tcid_label.grid(row=1, column=0, sticky="w", pady=(0, 10))
-
-    # Step Descriptions Title
-    steps_title = tk.Label(
-        left_column,
-        text="Step Descriptions:",
-        font=text_font,
-        bg="white",
-        anchor="w",
-        justify="left"
-    )
-    steps_title.grid(row=2, column=0, sticky="w")
-
-    # Individual steps
     for idx, step in enumerate(step_lines):
-        step_label = tk.Label(
+        tk.Label(
             left_column,
             text=f"    {step}",
             font=("Arial", 12),
@@ -116,16 +98,12 @@ def show_result_page(test_input):
             anchor="w",
             justify="left",
             wraplength=580
-        )
-        step_label.grid(row=3 + idx, column=0, sticky="w", pady=1)
+        ).grid(row=3 + idx, column=0, sticky="w", pady=1)
 
-    #=========================================================================================================
-
-
-    # Estimated duration
+    # === Estimated Duration and Pass Rate ===
     duration_label = tk.Label(
         left_column,
-        text="Estimated Duration: ...",
+        text=f"Estimated Duration: {results['predicted_duration']} seconds",
         font=main_font,
         bg="white",
         anchor="w",
@@ -133,10 +111,9 @@ def show_result_page(test_input):
     )
     duration_label.grid(row=3 + len(step_lines), column=0, sticky="w", pady=(20, 12))
 
-    # Estimated pass rate
     passrate_label = tk.Label(
         left_column,
-        text="Estimated Pass Rate: ...",
+        text=f"Estimated Pass Rate: {results['predicted_passrate']}%",
         font=main_font,
         bg="white",
         anchor="w",
@@ -144,8 +121,7 @@ def show_result_page(test_input):
     )
     passrate_label.grid(row=4 + len(step_lines), column=0, sticky="w")
 
-
-    # === Right Column (Similar Test Cases) ===
+    # === Right Column: Similar Test Cases ===
     right_column = tk.Frame(content_frame, bg="#e6f2ff", bd=1, relief="solid", width=250, height=640)
     right_column.grid(row=0, column=1, padx=(40, 20), sticky="ne")
     right_column.grid_propagate(False)
@@ -158,28 +134,30 @@ def show_result_page(test_input):
     )
     sim_title.pack(anchor="w", pady=(10, 10), padx=10)
 
-    for i in range(3):
-        sim = tk.Label(
+    for case_id in results["similar_cases"]:
+        detail = similar_case_details.get(case_id, {})
+        steps = detail.get("steps", "N/A")
+        duration = detail.get("duration", "N/A")
+        result = detail.get("result", "N/A")
+
+        info = f"• {case_id}\nDuration: {duration}s\nResult: {result}\nSteps: {steps}"
+        
+        tk.Label(
             right_column,
-            text=f"• Similar TestCase #{i+1}",
-            font=text_font,
+            text=info,
+            font=("Arial", 11),
             bg="#e6f2ff",
             anchor="w",
             justify="left",
-            wraplength=240
-        )
-        sim.pack(anchor="w", pady=2, padx=10)
+        wraplength=230
+    ).pack(anchor="w", pady=(5, 10), padx=10)
+
+
+    # Spacer to fill remaining space
     tk.Label(right_column, text="", bg="#e6f2ff").pack(expand=True, fill="both")
 
-    # === ML model results ===
-    results = parse_and_predict(test_input)
-    if not results:
-        duration_label.config(text="Estimated Duration: Prediction Failed")
-        passrate_label.config(text="Estimated Pass Rate: Prediction Failed")
-        return
 
-    duration_label.config(text=f"Estimated Duration: {results['predicted_duration']} seconds")
-    passrate_label.config(text=f"Estimated Pass Rate: {results['predicted_passrate']}%")
+
 
 
 
@@ -263,9 +241,16 @@ def parse_and_predict(test_input):
         pred_duration = reg.predict(X_input)[0]
         pred_passrate = clf.predict_proba(X_input)[0][1] * 100
 
+        #similar test cases    
+        sims = cosine_similarity(X_input, X_features)[0]
+        top_indices = sims.argsort()[-4:-1][::-1]  
+
+        similar_cases = [test_ids[i] for i in top_indices]
+
         return {
             "predicted_duration": round(pred_duration, 2),
-            "predicted_passrate": round(pred_passrate, 1)
+            "predicted_passrate": round(pred_passrate, 1),
+            "similar_cases": similar_cases
         }
 
     except Exception as e:
